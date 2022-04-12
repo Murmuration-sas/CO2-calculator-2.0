@@ -43,7 +43,7 @@ export default function Web(props) {
     <Wrapper>
       <Content>
         <FullScreen iframe={iframe}>
-          {!iframe && <HeaderWrapper />}
+          {!iframe /* && <HeaderWrapper /> */ }
           {props.children}
         </FullScreen>
         {!iframe && <Learning />}
@@ -51,7 +51,7 @@ export default function Web(props) {
       </Content>
       <EmbedWrapper />
       <ShareWrapper />
-      <ContactWrapper />
+      {/* <ContactWrapper /> */}
       <InstallButton />
     </Wrapper>
   )
