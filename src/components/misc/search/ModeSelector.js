@@ -40,9 +40,9 @@ export default function ModeSelector() {
   const location = useLocation()
   return (
     <Wrapper>
-      <Tab current={location.pathname === '/'} to='/'>
+      {/* <Tab current={location.pathname === '/'} to='/'>
         Distance
-      </Tab>
+      </Tab> */}
       <Tab current={location.pathname === '/itineraire'} to='/itineraire'>
         Itinéraire
       </Tab>
@@ -52,6 +52,9 @@ export default function ModeSelector() {
         large
       >
         Télétravail
+      </Tab>
+      <Tab current={location.pathname === '/'} to='/'>
+        Crowdfunding
       </Tab>
       <Burger location={location} />
     </Wrapper>
