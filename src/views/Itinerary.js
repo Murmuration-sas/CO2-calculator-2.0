@@ -7,6 +7,7 @@ import SearchContext from 'utils/SearchContext'
 import { useItinerary } from 'hooks/useItineraries'
 import Transportation from 'components/misc/Transportation'
 import Disclaimer from 'components/misc/Disclaimer'
+import Search from 'components/misc/Search'
 
 const Wrapper = styled.main`
   flex: 1;
@@ -124,6 +125,7 @@ export default function Itinerary() {
 
   return (
     <Wrapper>
+      <Search />
       <Flipper
         flipKey={transportationsToDisplay
           .map((transportation) => transportation.id)

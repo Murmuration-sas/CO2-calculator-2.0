@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  margin-bottom: 2.5rem;
 `
 const Bar = styled.div`
   position: relative;
@@ -22,7 +21,7 @@ const Emitted = styled.div`
   height: 100%;
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.second};
-  border-radius: 3.5rem;
+  border-radius: 1rem;
   transition: width 300ms ease-out;
 
   ${(props) => props.theme.mq.small} {

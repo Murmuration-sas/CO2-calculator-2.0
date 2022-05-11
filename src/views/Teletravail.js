@@ -6,11 +6,29 @@ import SearchContext from 'utils/SearchContext'
 import { useItinerary } from 'hooks/useItineraries'
 import YearlyFootprint from './teletravail/YearlyFootprint'
 import PercentFootprint from './teletravail/PercentFootprint'
+import Podcasts from './teletravail/Podcasts'
 import Disclaimer from 'components/misc/Disclaimer'
+import Search from 'components/misc/Search'
 
 const Wrapper = styled.main`
-  margin-top: 2rem;
 `
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+`
+
+const SearchWrapper = styled.main`
+  flex-basis: 60%;
+`
+
+const RightColumnWrapper = styled.main`
+  margin-top: 2rem;
+  min-width: 35%;
+`
+
 export default function Teletravail() {
   const {
     start,
@@ -45,8 +63,8 @@ export default function Teletravail() {
   useEffect(() => {
     setDistance(
       itinerary &&
-        itinerary[0].elements[0].status === 'OK' &&
-        itinerary[0].elements[0].distance.value
+      itinerary[0].elements[0].status === 'OK' &&
+      itinerary[0].elements[0].distance.value
     )
   }, [itinerary])
 
@@ -60,7 +78,7 @@ export default function Teletravail() {
             (distance - distance * extraKm) *
             teletravail *
             (52 - holidays - 1)) /
-            1000000
+          1000000
         )
       )
       setEmitted(
@@ -69,7 +87,7 @@ export default function Teletravail() {
             distance *
             presentiel *
             (52 - holidays - 1)) /
-            1000000
+          1000000
         )
       )
     }
@@ -84,15 +102,23 @@ export default function Teletravail() {
 
   return (
     <Wrapper>
-      {distance && currentTransportation && (
-        <YearlyFootprint
-          emitted={emitted}
-          saved={saved}
-          presentiel={presentiel}
-          teletravail={teletravail}
-        />
-      )}
-      {distance && currentTransportation && <PercentFootprint saved={saved} />}
+      <Container>
+        <SearchWrapper>
+          <Search />
+        </SearchWrapper>
+        <RightColumnWrapper>
+          {distance && currentTransportation && (
+            <YearlyFootprint
+              emitted={emitted}
+              saved={saved}
+              presentiel={presentiel}
+              teletravail={teletravail}
+            />
+          )}
+          {distance && currentTransportation && <PercentFootprint saved={saved} />}
+          <Podcasts />
+        </RightColumnWrapper>
+      </Container>
       <Disclaimer itinerary />
     </Wrapper>
   )

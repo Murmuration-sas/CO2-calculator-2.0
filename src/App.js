@@ -38,7 +38,7 @@ function App() {
                   <GlobalStyle />
                   <ModalProvider>
                     <Web>
-                      <Search />
+                      {/* <Search /> */}
                       <Switch>
                         <Route path='/itineraire'>
                           <Itinerary />

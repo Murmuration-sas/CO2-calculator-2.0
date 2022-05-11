@@ -35,6 +35,9 @@ const FullScreen = styled.div`
   margin: 0 auto;
   padding: ${(props) => (props.iframe ? 0.75 : 0)}rem 0.75rem
     ${(props) => (props.iframe ? 0 : 5)}rem;
+
+  width: 90%;
+  margin-top: 2rem;
 `
 export default function Web(props) {
   const iframe = useIframe()

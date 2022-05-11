@@ -31,7 +31,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
+    "serve": "webpack serve --config ./webpack.config.js",
     "build": "react-scripts build && yarn iframe",
     "iframe": "webpack",
     "test": "react-scripts test",
@@ -56,6 +57,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
     "webpack-cli": "^4.9.1"
   }
 }
