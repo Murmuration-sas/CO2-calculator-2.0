@@ -44,7 +44,10 @@ module.exports = {
         target: 'https://flockeo.com',
         changeOrigin: true,
         secure: false,
-        pathRewrite: { "^/flockeo": "" }
+        pathRewrite: { "^/flockeo": "" },
+        onProxyReq: proxyReq => {
+          proxyReq.setHeader('Authorization', 'Basic ' + btoa('Dylan:1Qn$G213TqP4h3sVELff'));
+        }
       }
     }
   }

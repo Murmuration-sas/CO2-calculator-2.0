@@ -242,5 +242,24 @@
         "value": 0
       }
     ]
+  },
+  {
+    "id": 1011,
+    "type": "flockeo",
+    "label": {
+      "fr": "Flockéo Moments"
+    },
+    "description": {
+      "fr": "Voyagez depuis chez vous et découvrez, à l’aide de professionnels passionnés, des destinations sous un autre œil."
+    },
+    "source": "https://flockeo.com/reserver-atelier-boost",
+    "emoji": { "main": "🌳" },
+    "default": true,
+    "display": {},
+    "values": [
+      {
+        "value": 0
+      }
+    ]
   }
 ]

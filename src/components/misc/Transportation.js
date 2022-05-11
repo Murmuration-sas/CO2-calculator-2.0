@@ -5,6 +5,7 @@ import ModalContext from 'utils/ModalContext'
 import Emoji from 'components/base/Emoji'
 import Carpool from './transportation/Carpool'
 import Uncertainty from './transportation/Uncertainty'
+import logoFlockeoMoment from 'data/flockeo/logo-Flockeo-moments.png'
 
 const Wrapper = styled.div`
   position: relative;
@@ -12,6 +13,22 @@ const Wrapper = styled.div`
   align-items: flex-end;
   margin-bottom: 1.375rem;
 `
+
+const FlockeoWrapper = styled.div`
+  margin-left: auto;
+  backgroud-color: red;
+`
+
+const FlockeoWrapperButton = styled.button`
+  border-radius: 3rem;
+  background-color: #2DA57E;
+  color: white;
+  padding: 0.25rem;
+  border: none;
+  width: 8rem;
+  cursor: pointer;
+`
+
 const TitleWrapper = styled.div`
   position: relative;
   z-index: 10;
@@ -81,7 +98,7 @@ const Value = styled.div`
     left: ${(props) => (props.inside ? 'auto' : '100%')};
     right: ${(props) => (props.inside ? '1rem' : 'auto')};
     color: ${(props) =>
-      props.theme.colors[props.inside ? 'background' : 'second']};
+    props.theme.colors[props.inside ? 'background' : 'second']};
   }
 `
 const Number = styled.span`
@@ -105,22 +122,40 @@ const Unit = styled.span`
 export default function Transportation(props) {
   const { setSource, setCO2E } = useContext(ModalContext)
 
+  const additionalStyle = (props.transportation.type == 'flockeo') ?
+    {
+      wrapper: {
+        backgroundColor: '#EFF4F9', borderRadius: '1rem', padding: '0.5rem'
+      },
+      emojiWrapper: { marginRight: '1.5rem' },
+      title: { color: '#2DA57E' },
+      img: { height: '3rem' }
+    }
+    : {}
+
   return (
-    <Wrapper {...props}>
-      <EmojiWrapper>
-        <Emoji>{props.transportation.emoji.main}</Emoji>
-        <SecondaryEmoji>{props.transportation.emoji.secondary}</SecondaryEmoji>
+    <Wrapper {...props} style={additionalStyle.wrapper}>
+      <EmojiWrapper style={additionalStyle.emojiWrapper}>
+        {
+          props.transportation.type == 'flockeo' ? (
+            <img src={logoFlockeoMoment} style={additionalStyle.img} />
+          ) : (
+            [
+              <Emoji key="1">{props.transportation.emoji.main}</Emoji>,
+              <SecondaryEmoji key="2">{props.transportation.emoji.secondary}</SecondaryEmoji>
+            ]
+          )
+        }
       </EmojiWrapper>
       <ChartWrapper>
         <TitleWrapper>
-          <Title>
+          <Title style={additionalStyle.title}>
             <span onClick={() => setSource(props.transportation.id)}>
               {props.transportation.label.fr}{' '}
               {props.distance &&
-                ` (${
-                  props.distance > 10000
-                    ? Math.round(props.distance / 1000)
-                    : Math.round(props.distance / 100) / 10
+                ` (${props.distance > 10000
+                  ? Math.round(props.distance / 1000)
+                  : Math.round(props.distance / 100) / 10
                 }km)`}
             </span>
             <Carpool transportation={props.transportation} />
@@ -137,10 +172,10 @@ export default function Transportation(props) {
                 {props.transportation.value > 100000
                   ? Math.round(props.transportation.value / 1000)
                   : props.transportation.value > 10000
-                  ? Math.round(props.transportation.value / 100) / 10
-                  : props.transportation.value > 100
-                  ? Math.round(props.transportation.value / 10) / 100
-                  : Math.round(props.transportation.value) / 1000}
+                    ? Math.round(props.transportation.value / 100) / 10
+                    : props.transportation.value > 100
+                      ? Math.round(props.transportation.value / 10) / 100
+                      : Math.round(props.transportation.value) / 1000}
               </Number>
               <Unit onClick={() => setCO2E(true)}>
                 {' '}
@@ -151,6 +186,11 @@ export default function Transportation(props) {
           </Bar>
         </Chart>
       </ChartWrapper>
+      {props.transportation.type == 'flockeo' &&
+        <FlockeoWrapper>
+          <a href="https://flockeo.com/reserver-atelier-boost" target="_blank"><FlockeoWrapperButton>Découvrir ➜</FlockeoWrapperButton></a>
+        </FlockeoWrapper>
+      }
     </Wrapper>
   )
 }

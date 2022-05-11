@@ -8,12 +8,29 @@ import { useItinerary } from 'hooks/useItineraries'
 import Transportation from 'components/misc/Transportation'
 import Disclaimer from 'components/misc/Disclaimer'
 import Search from 'components/misc/Search'
+import UsefullInformations from './UsefulInformations'
 
 const Wrapper = styled.main`
   flex: 1;
   position: relative;
   margin-bottom: 2rem;
 `
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+`
+
+const SearchWrapper = styled.main`
+  flex-basis: 60%;
+`
+
+const RightColumnWrapper = styled.main`
+  margin-top: 2rem;
+`
+
 export default function Itinerary() {
   const { start, end } = useContext(SearchContext)
 
@@ -22,7 +39,7 @@ export default function Itinerary() {
   const { data: railItineraries } = useItinerary(start, end, 'transit')
   const [planeDistance, setPlaneDistance] = useState(0)
 
-  const [datas, setDatas] = useState({ car: 0, foot: 0, rail: 0, plane: 0 })
+  const [datas, setDatas] = useState({ car: 0, foot: 0, rail: 0, plane: 0, flockeo: 0 })
   useEffect(() => {
     setDatas({
       car:
@@ -38,9 +55,10 @@ export default function Itinerary() {
         (railItineraries[0].elements[0].status === 'OK'
           ? railItineraries[0].elements[0].distance.value
           : carItineraries &&
-            carItineraries[0].elements[0].status === 'OK' &&
-            carItineraries[0].elements[0].distance.value),
+          carItineraries[0].elements[0].status === 'OK' &&
+          carItineraries[0].elements[0].distance.value),
       plane: planeDistance,
+      flockeo: 1
     })
   }, [carItineraries, footItineraries, railItineraries, planeDistance])
 
@@ -86,11 +104,11 @@ export default function Itinerary() {
             //Only max
             (!transportation.display.min &&
               transportation.display.max >=
-                datas[transportation.type] / 1000) ||
+              datas[transportation.type] / 1000) ||
             //Only min
             (!transportation.display.max &&
               transportation.display.min <=
-                datas[transportation.type] / 1000) ||
+              datas[transportation.type] / 1000) ||
             //Both min and max
             (transportation.display.min <= datas[transportation.type] / 1000 &&
               transportation.display.max >= datas[transportation.type] / 1000)
@@ -99,8 +117,8 @@ export default function Itinerary() {
           const valuesToUse =
             transportation.values.length > 1
               ? transportation.values.find(
-                  (value) => value.max > datas[transportation.type] / 1000
-                )
+                (value) => value.max > datas[transportation.type] / 1000
+              )
               : transportation.values[0]
           const valueToUse =
             ((valuesToUse
@@ -125,25 +143,32 @@ export default function Itinerary() {
 
   return (
     <Wrapper>
-      <Search />
-      <Flipper
-        flipKey={transportationsToDisplay
-          .map((transportation) => transportation.id)
-          .join()}
-      >
-        {transportationsToDisplay.map((transportation) => (
-          <Flipped flipId={transportation.id} key={transportation.id}>
-            <Transportation
-              transportation={transportation}
-              max={
-                transportationsToDisplay[transportationsToDisplay.length - 1]
-                  .value
-              }
-              distance={datas[transportation.type]}
-            />
-          </Flipped>
-        ))}
-      </Flipper>
+      <Container>
+        <SearchWrapper>
+          <Search />
+          <Flipper
+            flipKey={transportationsToDisplay
+              .map((transportation) => transportation.id)
+              .join()}
+          >
+            {transportationsToDisplay.map((transportation) => (
+              <Flipped flipId={transportation.id} key={transportation.id}>
+                <Transportation
+                  transportation={transportation}
+                  max={
+                    transportationsToDisplay[transportationsToDisplay.length - 1]
+                      .value
+                  }
+                  distance={datas[transportation.type]}
+                />
+              </Flipped>
+            ))}
+          </Flipper>
+        </SearchWrapper>
+        <RightColumnWrapper>
+          <UsefullInformations end={end} />
+        </RightColumnWrapper>
+      </Container>
       <Disclaimer itinerary />
     </Wrapper>
   )

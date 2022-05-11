@@ -20,8 +20,8 @@ import FootprintModal from 'components/modals/FootprintModal'
 import OccupancyModal from 'components/modals/OccupancyModal'
 import Web from 'components/layout/Web'
 import Search from 'components/misc/Search'
-import Itinerary from 'views/Itinerary'
-import Teletravail from 'views/Teletravail'
+import Itinerary from 'views/intinerary/Itinerary'
+import Teletravail from 'views/teletravail/Teletravail'
 import Distance from 'views/Distance'
 
 const queryClient = new QueryClient()

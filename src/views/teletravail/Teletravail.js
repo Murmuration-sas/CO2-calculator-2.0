@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import TransportationContext from 'utils/TransportationContext'
 import SearchContext from 'utils/SearchContext'
 import { useItinerary } from 'hooks/useItineraries'
-import YearlyFootprint from './teletravail/YearlyFootprint'
-import PercentFootprint from './teletravail/PercentFootprint'
-import Podcasts from './teletravail/Podcasts'
+import YearlyFootprint from './YearlyFootprint'
+import PercentFootprint from './PercentFootprint'
+import Podcasts from './Podcasts'
 import Disclaimer from 'components/misc/Disclaimer'
 import Search from 'components/misc/Search'
 
@@ -21,12 +21,10 @@ const Container = styled.div`
 `
 
 const SearchWrapper = styled.main`
-  flex-basis: 60%;
 `
 
 const RightColumnWrapper = styled.main`
   margin-top: 2rem;
-  min-width: 35%;
 `
 
 export default function Teletravail() {

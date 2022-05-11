@@ -23,7 +23,7 @@ const Iframes = styled.div`
     height: 12rem;
 `
 
-export default function YearlyFootprint(props) {
+export default function Podcasts(props) {
 
     const [podcasts, setPodcasts] = useState([])
 
@@ -40,7 +40,7 @@ export default function YearlyFootprint(props) {
                 <Iframes>
                     {
                         podcasts.map((e, index) => {
-                            return <iframe src={'https://open.spotify.com/embed/episode/' + e.acf.identifiant_spotify} width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                            return <iframe src={'https://open.spotify.com/embed/episode/' + e.acf.identifiant_spotify} width="90%" height="152" scrolling="no" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                         })
                     }
                 </Iframes>
