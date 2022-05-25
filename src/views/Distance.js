@@ -4,16 +4,27 @@ import { Flipper, Flipped } from 'react-flip-toolkit'
 
 import TransportationContext from 'utils/TransportationContext'
 import SearchContext from 'utils/SearchContext'
+import useIframe from 'hooks/useIframe'
 
 import Transportation from 'components/misc/Transportation'
 import Disclaimer from 'components/misc/Disclaimer'
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
   flex: 1;
   position: relative;
   margin-bottom: 2rem;
 `
 export default function Results() {
+  const iframe = useIframe(true)
+
+  useEffect(() => {
+    if (!iframe) {
+      document.title = 'Mon Impact Transport'
+      document.getElementById('Accueil')?.focus()
+      document.activeElement.blur()
+    }
+  }, [iframe])
+
   const { transportations, carpool, uncertainty, displayAll } = useContext(
     TransportationContext
   )

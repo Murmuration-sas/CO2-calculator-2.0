@@ -49,6 +49,9 @@ export default function ModeSelector() {
       <Tab
         current={location.pathname === '/teletravail'}
         to='/teletravail'
+        title={`Télétravail${
+          location.pathname === '/teletravail' ? ' : page actuelle' : ''
+        }`}
         large
       >
         Télétravail
