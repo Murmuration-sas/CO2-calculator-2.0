@@ -43,7 +43,7 @@ function App() {
                       <Web>
                         {/* <Search /> */}
                         <Switch>
-                          <Route path='/itineraire'>
+                          <Route exact path='/'>
                             <Itinerary />
                           </Route>
                           <Route path='/teletravail'>

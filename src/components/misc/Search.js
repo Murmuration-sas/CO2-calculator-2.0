@@ -73,7 +73,7 @@ export default function Search() {
       <ModeSelector />
       <Content>
         <Switch>
-          <Route path='/itineraire'>
+          <Route exact path='/'>
             <Text>
               {t('search.1')}{' '}
               <Color onClick={() => setOccupancy(true)}>({t('search.2')})</Color>{' '}
@@ -98,7 +98,7 @@ export default function Search() {
         </Switch>
       </Content>
       <Checkboxes>
-        <Route path='/' exact>
+        <Route path='/distance' exact>
           <StyledCheckbox
             name='display-all'
             checked={displayAll}

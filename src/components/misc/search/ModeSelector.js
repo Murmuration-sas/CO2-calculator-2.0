@@ -43,7 +43,7 @@ export default function ModeSelector() {
       {/* <Tab current={location.pathname === '/'} to='/'>
         Distance
       </Tab> */}
-      <Tab current={location.pathname === '/itineraire'} to='/itineraire'>
+      <Tab current={location.pathname === '/'} to='/'>
         Itinéraire
       </Tab>
       <Tab
