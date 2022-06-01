@@ -177,7 +177,7 @@ export default function Itinerary() {
           </Flipper>
         </SearchWrapper>
         <RightColumnWrapper>
-          <UsefullInformations end={end} />
+          <UsefullInformations />
         </RightColumnWrapper>
       </Container>
       <Disclaimer itinerary />

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
+import { useTranslation } from "react-i18next"
 
 import TransportationContext from 'utils/TransportationContext'
 import ModalContext from 'utils/ModalContext'
@@ -9,6 +10,7 @@ import ModeSelector from './search/ModeSelector'
 import Distance from './search/Distance'
 import Itinerary from './search/Itinerary'
 import Teletravail from './search/Teletravail'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Wrapper = styled.div``
 const Content = styled.div`
@@ -63,32 +65,33 @@ export default function Search() {
     TransportationContext
   )
   const { setOccupancy } = useContext(ModalContext)
+  const { t } = useTranslation()
 
   return (
     <Wrapper>
+      <LanguageSwitcher />
       <ModeSelector />
       <Content>
         <Switch>
           <Route path='/itineraire'>
             <Text>
-              Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
-              pour ce trajet
+              {t('search.1')}{' '}
+              <Color onClick={() => setOccupancy(true)}>({t('search.2')})</Color>{' '}
+              {t('search.3')}
             </Text>
             <Itinerary />
           </Route>
           <Route path='/teletravail'>
             <Text>
-              Découvrez la quantité de CO2e que vous économisez (à l'année) en
-              travaillant de chez vous
+              {t('search.4')}
             </Text>
             <Teletravail />
           </Route>
           <Route>
             <Text>
-              Découvrez la quantité de CO2e que vous émettez{' '}
-              <Color onClick={() => setOccupancy(true)}>(par personne)</Color>{' '}
-              pour cette distance
+              {t('search.1')}{' '}
+              <Color onClick={() => setOccupancy(true)}>({t('search.2')})</Color>{' '}
+              {t('search.5')}
             </Text>
             <Distance />
           </Route>
@@ -101,14 +104,14 @@ export default function Search() {
             checked={displayAll}
             onChange={setDisplayAll}
           >
-            Afficher tous les modes de transport
+            {t('search.6')}
           </StyledCheckbox>
           <StyledCheckbox
             name='carpool'
             checked={carpool}
             onChange={() => setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))}
           >
-            Afficher le covoiturage
+            {t('search.7')}
           </StyledCheckbox>
         </Route>
         <Route path='/itineraire'>
@@ -117,7 +120,7 @@ export default function Search() {
             checked={carpool}
             onChange={() => setCarpool((prevCarpool) => (prevCarpool ? 0 : 2))}
           >
-            Afficher le covoiturage
+            {t('search.7')}
           </StyledCheckbox>
         </Route>
       </Checkboxes>

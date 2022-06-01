@@ -7,6 +7,9 @@ import Carpool from './transportation/Carpool'
 import Uncertainty from './transportation/Uncertainty'
 import logoFlockeoMoment from 'data/flockeo/logo-Flockeo-moments.png'
 
+import { useTranslation } from "react-i18next"
+import i18n from "i18next"
+
 const Wrapper = styled.div`
   position: relative;
   display: flex;
@@ -122,6 +125,8 @@ const Unit = styled.span`
 export default function Transportation(props) {
   const { setSource, setCO2E } = useContext(ModalContext)
 
+  const { t, i18n } = useTranslation()
+
   const additionalStyle = (props.transportation.type == 'flockeo') ?
     {
       wrapper: {
@@ -151,7 +156,7 @@ export default function Transportation(props) {
         <TitleWrapper>
           <Title style={additionalStyle.title}>
             <span onClick={() => setSource(props.transportation.id)}>
-              {props.transportation.label.fr}{' '}
+              {props.transportation.label[i18n.language]}{' '}
               {props.distance &&
                 ` (${props.distance > 10000
                   ? Math.round(props.distance / 1000)

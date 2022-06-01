@@ -5,6 +5,8 @@ import axios from 'axios'
 import currency from 'data/flockeo/currency.png'
 import cutlery from 'data/flockeo/cutlery.png'
 import bed from 'data/flockeo/bed.png'
+import { useRecoilState } from 'recoil'
+import { searchState as searchAtomState } from 'atoms/search'
 
 const Wrapper = styled.div`
 `
@@ -43,6 +45,7 @@ export default function UsefulInformations(props) {
 
     const [infos, setInfos] = useState([])
     const [country, setCountry] = useState('')
+    const [searchState, setSearchState] = useRecoilState(searchAtomState)
 
     useEffect(() => {
         axios.get(`/flockeo/wp-json/acf/v3/pays?search=${country}&per_page=1`)
@@ -51,12 +54,19 @@ export default function UsefulInformations(props) {
     }, [country])
 
     useEffect(() => {
-        if (props.end) setCountry(props.end.address.match(/(^([^,]+.*), )*(.*)/).at(-1))
-    }, [props])
+        const placeID = (new URLSearchParams(window.location.search))?.get('end')
+
+        console.log('*', searchState.history)
+
+        if (placeID) {
+            const country = searchState.history.find(e => e.place_id === placeID)?.terms?.at(-1)?.value
+            if (country) setCountry(country)
+        }
+    }, [searchState])
 
     return (
         <Wrapper>
-            <Container>
+            {country && <Container>
                 <h1>Infos utiles</h1>
                 <p style={{ marginTop: '-1rem', marginBottom: '2rem' }}>{country}</p>
                 <Wrp>
@@ -71,7 +81,7 @@ export default function UsefulInformations(props) {
                     </Row>
                 </Wrp>
                 <a href={'https://flockeo.com/pays/' + country} target="_blank"><Btn>Trouver un logement responsable</Btn></a>
-            </Container>
+            </Container>}
         </Wrapper >
     )
 }

@@ -3,7 +3,8 @@
     "id": 1000,
     "type": "plane",
     "label": {
-      "fr": "Avion"
+      "fr": "Avion",
+      "en": "Flight"
     },
     "uncertainty": true,
     "description": {
@@ -42,7 +43,8 @@
     "id": 1001,
     "type": "car",
     "label": {
-      "fr": "Voiture (thermique)"
+      "fr": "Voiture (thermique)",
+      "en": "Car (thermal)"
     },
     "description": {
       "fr": "193 gCO2e/km/véhicule ; Base Carbone ADEME, moyenne nationale toutes distances, toutes carburations. <br/>Les données intègrent l’amont et la combustion du carburant. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
@@ -62,7 +64,8 @@
     "id": 1002,
     "type": "car",
     "label": {
-      "fr": "Voiture (électrique)"
+      "fr": "Voiture (électrique)",
+      "en": "Car (electric)"
     },
     "description": {
       "fr": "19,8 gCO2e/km/véhicule ; Base Carbone ADEME, Véhicule Electrique compact - \"Coeur de gamme\". <br/>Les données intègrent les émissions liées à l'électricité pour recharger le véhicule. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
@@ -82,7 +85,8 @@
     "id": 1003,
     "type": "car",
     "label": {
-      "fr": "Scooter et moto légère"
+      "fr": "Scooter et moto légère",
+      "en": "Scooter and light motorcycle"
     },
     "description": {
       "fr": "Deux roues thermiques < 250cm3 ; <br/>61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
@@ -103,7 +107,8 @@
     "id": 1004,
     "type": "car",
     "label": {
-      "fr": "Moto"
+      "fr": "Moto",
+      "en": "Motorbike"
     },
     "description": {
       "fr": "Deux roues thermiques > 250cm3 ;<br/>168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
@@ -123,7 +128,8 @@
     "id": 1005,
     "type": "foot",
     "label": {
-      "fr": "Vélo (ou trottinette) à assistance électrique"
+      "fr": "Vélo (ou trottinette) à assistance électrique",
+      "en": "Electrically assisted bicycle (or scooter)"
     },
     "description": {
       "fr": " 2 gCO2e/km/personne pour la phase d'usage ; Etude ADEME \"Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement \"<br/><br/>Hypothèses Vélo Électrique :<br/>- Capacité de la batterie : 11,6 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique 417,6 Wh<br/>- Distance de 40 km par charge complète<br/>- 2 500 km/an<br/><br/>Hypothèses Trotinette Électrique :<br/>- Capacité de la batterie : 2,5 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique : 90 Wh<br/>- 300 charges par an<br/>- 1 000 km/an"
@@ -143,7 +149,8 @@
     "id": 1006,
     "type": "rail",
     "label": {
-      "fr": "Transport en commun (Métro, RER ou tramway)"
+      "fr": "Transport en commun (Métro, RER ou tramway)",
+      "en": "Public transport (Metro, RER or tram)"
     },
     "description": {
       "fr": "Nous faisons une moyenne des facteurs d'émissions des trois modes de transport :<br/><br/><b>Métro</b> : 2,5 gCO2e/km/personne ; Base Carbone ADEME, Métro Ile de France<br/><br/><b>RER</b> : 4,1 gCO2e/km/personne ; Base Carbone ADEME<br/><br/><b>Tramway</b> : 2,2 gCO2e/km/personne ; Base Carbone ADEME, Tramway - Ile de France"
@@ -164,7 +171,8 @@
     "id": 1007,
     "type": "rail",
     "label": {
-      "fr": "TGV ou intercités"
+      "fr": "TGV ou intercités",
+      "en": "TGV or intercity"
     },
     "description": {
       "fr": "Nous faisons une moyenne des facteurs d'émissions des deux modes de transport :<br/><br/><b>TGV</b> : 1,73 gCO2e/km/personne : Base Carbone ADEME<br/><br/><b>Intercités</b> : 5,29 gCO2e/km/personne ; Base Carbone ADEME"
@@ -185,7 +193,8 @@
     "id": 1008,
     "type": "car",
     "label": {
-      "fr": "Bus (thermique)"
+      "fr": "Bus (thermique)",
+      "en": "Bus (thermal)"
     },
     "description": {
       "fr": "103 gCO2e/km/personne ; Taux de remplissage : 10 personnes ; Base Carbone ADEME, Autobus - Gazole"
@@ -206,7 +215,8 @@
     "id": 1009,
     "type": "car",
     "label": {
-      "fr": "Autocar"
+      "fr": "Autocar",
+      "en": "Bus"
     },
     "description": {
       "fr": "35,2 gCO2e/km/personne ; Taux de remplissage : 30 personnes (62%) ; Base Carbone ADEME, Autocar - Gazole"
@@ -227,7 +237,8 @@
     "id": 1010,
     "type": "foot",
     "label": {
-      "fr": "Vélo ou marche"
+      "fr": "Vélo ou marche",
+      "en": "Bike or walk"
     },
     "description": {
       "fr": "0 gCO2e/km/personne ; ADEME"
@@ -247,7 +258,8 @@
     "id": 1011,
     "type": "flockeo",
     "label": {
-      "fr": "Flockéo Moments"
+      "fr": "Flockéo Moments",
+      "en": "Flockéo Moments"
     },
     "description": {
       "fr": "Voyagez depuis chez vous et découvrez, à l’aide de professionnels passionnés, des destinations sous un autre œil."

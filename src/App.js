@@ -23,48 +23,52 @@ import Search from 'components/misc/Search'
 import Itinerary from 'views/intinerary/Itinerary'
 import Teletravail from 'views/teletravail/Teletravail'
 import Distance from 'views/Distance'
+import { RecoilRoot } from 'recoil'
 
 const queryClient = new QueryClient()
 
 function App() {
+
   return (
     <Router>
-      <QueryParamProvider ReactRouterRoute={Route}>
-        <QueryClientProvider client={queryClient}>
-          <StyleProvider>
-            <TransportationProvider>
-              <SearchProvider>
-                <UXProvider>
-                  <GlobalStyle />
-                  <ModalProvider>
-                    <Web>
-                      {/* <Search /> */}
-                      <Switch>
-                        <Route path='/itineraire'>
-                          <Itinerary />
-                        </Route>
-                        <Route path='/teletravail'>
-                          <Teletravail />
-                        </Route>
-                        <Route path='/'>
-                          <Distance />
-                        </Route>
-                      </Switch>
-                    </Web>
-                    <CO2EModal />
-                    <RadiativeForcingModal />
-                    <InstallInstructionsModal />
-                    <SourceModal />
-                    <TeletravailModal />
-                    <FootprintModal />
-                    <OccupancyModal />
-                  </ModalProvider>
-                </UXProvider>
-              </SearchProvider>
-            </TransportationProvider>
-          </StyleProvider>
-        </QueryClientProvider>
-      </QueryParamProvider>
+      <RecoilRoot>
+        <QueryParamProvider ReactRouterRoute={Route}>
+          <QueryClientProvider client={queryClient}>
+            <StyleProvider>
+              <TransportationProvider>
+                <SearchProvider>
+                  <UXProvider>
+                    <GlobalStyle />
+                    <ModalProvider>
+                      <Web>
+                        {/* <Search /> */}
+                        <Switch>
+                          <Route path='/itineraire'>
+                            <Itinerary />
+                          </Route>
+                          <Route path='/teletravail'>
+                            <Teletravail />
+                          </Route>
+                          <Route path='/'>
+                            <Distance />
+                          </Route>
+                        </Switch>
+                      </Web>
+                      <CO2EModal />
+                      <RadiativeForcingModal />
+                      <InstallInstructionsModal />
+                      <SourceModal />
+                      <TeletravailModal />
+                      <FootprintModal />
+                      <OccupancyModal />
+                    </ModalProvider>
+                  </UXProvider>
+                </SearchProvider>
+              </TransportationProvider>
+            </StyleProvider>
+          </QueryClientProvider>
+        </QueryParamProvider>
+      </RecoilRoot>
     </Router>
   )
 }

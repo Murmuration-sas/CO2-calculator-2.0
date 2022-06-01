@@ -5,6 +5,8 @@ import { useSuggestions } from 'hooks/useAddress'
 import useDebounce from 'hooks/useDebounce'
 import TextInput from './search/TextInput'
 import Suggestions from './search/Suggestions'
+import { useRecoilState } from 'recoil'
+import { searchState as searchAtomState } from 'atoms/search'
 
 const Wrapper = styled.form`
   position: absolute;
@@ -36,6 +38,8 @@ export default function Search(props) {
   const input = useRef(null)
   const [current, setCurrent] = useState(0)
 
+  const [searchState, setSearchState] = useRecoilState(searchAtomState)
+
   useEffect(() => {
     if (!focus) {
       setCurrent(0)
@@ -46,9 +50,14 @@ export default function Search(props) {
   const navigateToPlace = (place) => {
     if (place) {
       props.setAddress(place)
+      setSearchState({ ...searchState, history: [place] })
       setFocus(false)
     }
   }
+
+  useEffect(() => {
+    if (data) setSearchState({ ...searchState, history: searchState.history.concat(data) })
+  }, [data])
 
   return (
     <Wrapper
