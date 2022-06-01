@@ -43,13 +43,13 @@ function App() {
                       <Web>
                         {/* <Search /> */}
                         <Switch>
-                          <Route path='/itineraire'>
+                          <Route path='/'>
                             <Itinerary />
                           </Route>
                           <Route path='/teletravail'>
                             <Teletravail />
                           </Route>
-                          <Route path='/'>
+                          <Route path='/crowdfunding'>
                             <Distance />
                           </Route>
                         </Switch>
