@@ -73,7 +73,7 @@ export default function Search() {
       <ModeSelector />
       <Content>
         <Switch>
-          <Route path='/itineraire'>
+          <Route path='/'>
             <Text>
               {t('search.1')}{' '}
               <Color onClick={() => setOccupancy(true)}>({t('search.2')})</Color>{' '}

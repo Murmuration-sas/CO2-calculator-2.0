@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
@@ -30,7 +30,7 @@ const queryClient = new QueryClient()
 function App() {
 
   return (
-    <Router>
+    <Router hashType="slash">
       <RecoilRoot>
         <QueryParamProvider ReactRouterRoute={Route}>
           <QueryClientProvider client={queryClient}>
@@ -43,13 +43,13 @@ function App() {
                       <Web>
                         {/* <Search /> */}
                         <Switch>
-                          <Route path='/itineraire'>
+                          <Route exact path='/'>
                             <Itinerary />
                           </Route>
                           <Route path='/teletravail'>
                             <Teletravail />
                           </Route>
-                          <Route path='/'>
+                          <Route path='/crowdfunding'>
                             <Distance />
                           </Route>
                         </Switch>

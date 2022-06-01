@@ -42,18 +42,26 @@ const Row = styled.div`
 
 export default function UsefulInformations(props) {
 
-    const [infos, setInfos] = useState([])
+    const [infos, setInfos] = useState({})
     const [country, setCountry] = useState('')
     const [searchState, setSearchState] = useRecoilState(searchAtomState)
 
     useEffect(() => {
         axios.get(`/flockeo/wp-json/acf/v3/pays?search=${country}&per_page=1`)
-            .then(res => { setInfos(res.data[0].acf) })
-            .catch(err => { console.log(err) })
+            .then(res => {
+                const infos = res?.data[0]?.acf
+                console.log('*', infos)
+                if (infos) setInfos(infos)
+                else setInfos({})
+            })
+            .catch(err => {
+                console.log(err)
+                setInfos({})
+            })
     }, [country])
 
     useEffect(() => {
-        const placeID = (new URLSearchParams(window.location.search))?.get('end')
+        const placeID = window.location.href.match(/end=([^&]+)&{0,1}/)?.at(-1)
         if (placeID) {
             const country = searchState.history.find(e => e.place_id === placeID)?.terms?.at(-1)?.value
             if (country) setCountry(country)
@@ -62,7 +70,7 @@ export default function UsefulInformations(props) {
 
     return (
         <Wrapper>
-            {country && <Container>
+            {Object.keys(infos).length != 0 && <Container>
                 <h1>Infos utiles</h1>
                 <p style={{ marginTop: '-1rem', marginBottom: '2rem' }}>{country}</p>
                 <Wrp>
