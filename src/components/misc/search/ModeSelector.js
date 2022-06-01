@@ -43,7 +43,7 @@ export default function ModeSelector() {
       {/* <Tab current={location.pathname === '/'} to='/'>
         Distance
       </Tab> */}
-      <Tab current={location.pathname === '/'} to='/'>
+      <Tab current={location.pathname === '/itineraire'} to='/itineraire'>
         Itinéraire
       </Tab>
       <Tab
@@ -56,7 +56,7 @@ export default function ModeSelector() {
       >
         Télétravail
       </Tab>
-      <Tab current={location.pathname === '/crowdfunding'} to='https://crowdfunding.flockeo.com/'>
+      <Tab current={location.pathname === '/'} to='/'>
         Crowdfunding
       </Tab>
       <Burger location={location} />
