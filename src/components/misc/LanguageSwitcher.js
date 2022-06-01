@@ -15,8 +15,8 @@ export default function LanguageSwitcher() {
 
     return (
         <Select onChange={(e) => i18next.changeLanguage(e.target.value)}>
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
+            <option value="fr" selected={i18next.language == 'fr'} >FR</option>
+            <option value="en" selected={i18next.language == 'en'} >EN</option>
         </Select>
     )
 }
