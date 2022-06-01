@@ -51,6 +51,7 @@ const Title = styled.div`
 const ChartWrapper = styled.div`
   flex: 1;
   max-width: 30rem;
+  padding-right: 1.5rem;
 `
 const Chart = styled.div`
   position: relative;

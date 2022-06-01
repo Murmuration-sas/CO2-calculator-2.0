@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useQuery } from 'react-query'
 import axios from 'axios'
 import currency from 'data/flockeo/currency.png'
 import cutlery from 'data/flockeo/cutlery.png'
@@ -55,9 +54,6 @@ export default function UsefulInformations(props) {
 
     useEffect(() => {
         const placeID = (new URLSearchParams(window.location.search))?.get('end')
-
-        console.log('*', searchState.history)
-
         if (placeID) {
             const country = searchState.history.find(e => e.place_id === placeID)?.terms?.at(-1)?.value
             if (country) setCountry(country)

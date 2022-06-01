@@ -1,18 +1,22 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import i18next from "_i18next"
+import styled from 'styled-components'
+
+const Select = styled.select`
+    background-color: #eff4f9;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    color: #DE0244;
+    outline: transparent;
+`
 
 export default function LanguageSwitcher() {
 
-    function onChangeHandler(event) {
-        console.log('*', i18next, event, event.target.value)
-
-        i18next.changeLanguage(event.target.value)
-    }
-
     return (
-        <select onChange={onChangeHandler}>
+        <Select onChange={(e) => i18next.changeLanguage(e.target.value)}>
             <option value="fr">FR</option>
             <option value="en">EN</option>
-        </select>
+        </Select>
     )
 }
