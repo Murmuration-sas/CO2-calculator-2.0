@@ -1,15 +1,17 @@
 import { iframeResize } from 'iframe-resizer'
 
-const script =
-  document.getElementById('mon-impact-transport') ||
-  document.getElementById('datagir-teletravail') ||
-  document.getElementById('ecolab-transport')
+// const script =
+//   document.getElementById('mon-impact-transport') ||
+//   document.getElementById('datagir-teletravail') ||
+//   document.getElementById('ecolab-transport')
+
+const script = document.createElement('script')
 
 const domain = script.dataset.domain
 const search = script.dataset.search || ''
 const source = window.location.href.toString()
 
-const src = `${domain || 'https://monimpacttransport.fr'}/${search}${
+const src = `${domain || 'https://dev.flockeo.com/app/co2-calculator/v2'}/${search}${
   search && search.includes('?') ? '&' : '?'
 }iframe=1&source=${source}`
 
@@ -27,4 +29,6 @@ for (var key in iframeAttributes) {
 }
 iframeResize({}, iframe)
 
-script.parentNode.insertBefore(iframe, script)
+// script.parentNode.insertBefore(iframe, script)
+document.body.appendChild(iframe)
+document.body.appendChild(script)
