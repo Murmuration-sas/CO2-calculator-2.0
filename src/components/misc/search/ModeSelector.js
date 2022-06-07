@@ -56,7 +56,7 @@ export default function ModeSelector() {
       >
         Télétravail
       </Tab>
-      <Tab current={location.pathname === '/'} to='https://crowdfunding.flockeo.com'>
+      <Tab current={location.pathname === '/crowdfunding'} to='https://crowdfunding.flockeo.com'>
         Crowdfunding
       </Tab>
       <Burger location={location} />
