@@ -43,7 +43,7 @@ export default function ContactPrompt(props) {
           </Text>
         </>
       )}
-      <Text>
+      {/* <Text>
         <strong>
           Vous souhaitez réutiliser les données brutes ou obtenir de l'aide pour
           intégrer ce simulateur ?
@@ -66,7 +66,7 @@ export default function ContactPrompt(props) {
           </MagicLink>
           .
         </Text>
-      )}
+      )} */}
     </>
   )
 }

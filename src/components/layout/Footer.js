@@ -96,7 +96,7 @@ export default function Footer(props) {
       <Content iframe={iframe}>
         <MobileButtons iframe={iframe} />
 
-        <Section>{props.children}</Section>
+        {/* <Section>{props.children}</Section>
         <Section>
           <ContactPrompt />
         </Section>
@@ -128,7 +128,7 @@ export default function Footer(props) {
           <Button to='https://datagir.ademe.fr/#applications'>
             Voir tous nos simulateurs
           </Button>
-        </Section>
+        </Section> */}
       </Content>
       <LogosWrapper>
         <Logos
