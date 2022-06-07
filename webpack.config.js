@@ -4,9 +4,9 @@ const Dotenv = require('dotenv-webpack')
 const webpack = require('webpack')
 
 module.exports = env => ({
-  // entry: './iframe/index.js',
+  entry: './src/index.js',
   output: {
-    filename: 'iframe.js',
+    filename: 'script.js',
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {

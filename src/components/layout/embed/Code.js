@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
 import copy from 'copy-to-clipboard'
-
-import StyleContext from 'utils/StyleContext'
 
 const Wrapper = styled.div`
   margin-bottom: 2em;
@@ -35,17 +32,7 @@ const Explication = styled.p`
   font-style: italic;
 `
 export default function Code(props) {
-  let location = useLocation()
-  const { theme } = useContext(StyleContext)
-  const [script, setScript] = useState(null)
-
-  useEffect(() => {
-    setScript(
-      `<script id="${props.id || 'datagir'}" src="${
-        window.location.origin
-      }/iframe.js" data-search="${props.url || '?'}theme=${theme}"></script>`
-    )
-  }, [location.pathname, props.id, props.url, theme])
+  const script = '<iframe src="' + window.location.protocol + "//" + window.location.hostname + window.location.pathname + '" style="border: medium none; width: 100%; display: block; margin: 0px auto; overflow: hidden; height: 982px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" />'
 
   const [copied, setCopied] = useState(false)
   return (
@@ -56,7 +43,6 @@ export default function Code(props) {
           if (copy(script)) {
             setCopied(true)
           }
-          window._paq?.push(['trackEvent', 'Share', 'Embed', props.url])
         }}
       >
         {script}
