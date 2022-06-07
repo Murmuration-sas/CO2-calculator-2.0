@@ -47,7 +47,7 @@ export default function UsefulInformations(props) {
     const [searchState, setSearchState] = useRecoilState(searchAtomState)
 
     useEffect(() => {
-        axios.get(`/flockeo/wp-json/acf/v3/pays?search=${country}&per_page=1`)
+        axios.get(`${process.env.REACT_APP_API_URL}/wp-json/acf/v3/pays?search=${country}&per_page=1`)
             .then(res => {
                 const infos = res?.data[0]?.acf
                 console.log('*', infos)

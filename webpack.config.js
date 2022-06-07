@@ -1,8 +1,9 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
+const webpack = require('webpack')
 
-module.exports = {
-  mode: 'development',
+module.exports = env => ({
   // entry: './iframe/index.js',
   output: {
     filename: 'iframe.js',
@@ -35,6 +36,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "./index.html"
+    }),
+    new Dotenv({
+      path: path.resolve(__dirname, `./.env.${env.mode}`)
     })
   ],
   devServer: {
@@ -51,4 +55,4 @@ module.exports = {
       }
     }
   }
-}
+})
