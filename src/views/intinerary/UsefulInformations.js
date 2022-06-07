@@ -47,17 +47,18 @@ export default function UsefulInformations(props) {
     const [searchState, setSearchState] = useRecoilState(searchAtomState)
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/wp-json/acf/v3/pays?search=${country}&per_page=1`)
-            .then(res => {
-                const infos = res?.data[0]?.acf
-                console.log('*', infos)
-                if (infos) setInfos(infos)
-                else setInfos({})
-            })
-            .catch(err => {
-                console.log(err)
-                setInfos({})
-            })
+        if (country) {
+            axios.get(`${process.env.REACT_APP_API_URL}/wp-json/acf/v3/pays?search=${country}&per_page=1`)
+                .then(res => {
+                    const infos = res?.data[0]?.acf
+                    if (infos) setInfos(infos)
+                    else setInfos({})
+                })
+                .catch(err => {
+                    console.log(err)
+                    setInfos({})
+                })
+        }
     }, [country])
 
     useEffect(() => {
