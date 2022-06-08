@@ -32,13 +32,13 @@ const Logos = styled(MagicLink)`
 export default function Header(props) {
   return (
     <Wrapper className={props.className}>
-      <Left>
+      {/* <Left>
         <Logos to='/' aria-label={`Revenir à l'accueil`} id='Accueil'>
           <Marianne />
           <Ademe />
         </Logos>
         {props.children}
-      </Left>
+      </Left> */}
       <ThemeToggle />
     </Wrapper>
   )
