@@ -3,7 +3,7 @@ import i18next from "_i18next"
 import styled from 'styled-components'
 
 const Select = styled.select`
-    background-color: #eff4f9;
+    background-color: ${(props) => props.theme.colors.secondLight};
     margin-bottom: 0.5rem;
     border-radius: 0.25rem;
     border-color: transparent;

@@ -17,12 +17,11 @@ const Wrapper = styled.div`
   margin-bottom: 1.375rem;
 `
 
-const FlockeoWrapper = styled.div`
+const FlockeoWrapperButton = styled.div`
   margin-left: auto;
-  backgroud-color: red;
 `
 
-const FlockeoWrapperButton = styled.button`
+const FlockeoButton = styled.button`
   border-radius: 3rem;
   background-color: #2DA57E;
   color: white;
@@ -128,16 +127,21 @@ export default function Transportation(props) {
 
   const { t, i18n } = useTranslation()
 
-  const additionalStyle = (props.transportation.type == 'flockeo') ?
-    {
-      wrapper: {
-        backgroundColor: '#EFF4F9', borderRadius: '1rem', padding: '0.5rem'
-      },
-      emojiWrapper: { marginRight: '1.5rem' },
-      title: { color: '#2DA57E' },
-      img: { height: '3rem' }
+  const additionalStyle = (() => {
+    var style = {}
+    if (props.transportation.type == 'flockeo') {
+      style = {
+        wrapper: {
+          backgroundColor: '#EFF4F9', borderRadius: '1rem', padding: '0.5rem'
+        },
+        emojiWrapper: { marginRight: '1.5rem' },
+        title: { color: '#2DA57E' },
+        img: { height: '3rem' },
+        barValue: { color: 'rgb(45, 165, 126)' }
+      }
     }
-    : {}
+    return style
+  })()
 
   return (
     <Wrapper {...props} style={additionalStyle.wrapper}>
@@ -173,6 +177,7 @@ export default function Transportation(props) {
             <Value
               noBar={props.transportation.value / props.max === 0}
               inside={props.transportation.value / props.max > 0.7}
+              style={additionalStyle.barValue}
             >
               <Number>
                 {props.transportation.value > 100000
@@ -183,7 +188,7 @@ export default function Transportation(props) {
                       ? Math.round(props.transportation.value / 10) / 100
                       : Math.round(props.transportation.value) / 1000}
               </Number>
-              <Unit onClick={() => setCO2E(true)}>
+              <Unit onClick={() => setCO2E(true)} >
                 {' '}
                 kgCO
                 <sub>2</sub>e
@@ -193,9 +198,9 @@ export default function Transportation(props) {
         </Chart>
       </ChartWrapper>
       {props.transportation.type == 'flockeo' &&
-        <FlockeoWrapper>
-          <a href="https://flockeo.com/reserver-atelier-boost" target="_blank"><FlockeoWrapperButton>Découvrir ➜</FlockeoWrapperButton></a>
-        </FlockeoWrapper>
+        <FlockeoWrapperButton>
+          <a href="https://flockeo.com/reserver-atelier-boost" target="_blank"><FlockeoButton>Découvrir ➜</FlockeoButton></a>
+        </FlockeoWrapperButton>
       }
     </Wrapper>
   )
