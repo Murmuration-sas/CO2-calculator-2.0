@@ -32,7 +32,7 @@ export default function Transportations() {
           {transportations
             .filter(
               (transportation) =>
-                transportation.default && !transportation.carpool
+                transportation.default && !transportation.carpool && transportation.id != 1011
             )
             .sort((a, b) => (a.id > b.id ? 1 : -1))
             .map((transportation) => (
