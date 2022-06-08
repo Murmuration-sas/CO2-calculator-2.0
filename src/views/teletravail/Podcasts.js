@@ -28,7 +28,7 @@ export default function Podcasts(props) {
     const [podcasts, setPodcasts] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_URL}/wp-json/acf/v3/podcast`)
+        axios.get(`${env.FLOCKEO_URL}/wp-json/wp/v2/podcast`)
             .then(res => { setPodcasts(res.data) })
             .catch(err => { console.log(err) })
     }, [])

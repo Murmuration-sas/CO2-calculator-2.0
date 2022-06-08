@@ -48,7 +48,7 @@ export default function UsefulInformations(props) {
 
     useEffect(() => {
         if (country) {
-            axios.get(`${process.env.REACT_APP_API_URL}/wp-json/acf/v3/pays?search=${country}&per_page=1`)
+            axios.get(`${env.FLOCKEO_URL}/wp-json/wp/v2/pays?search=${country}&per_page=1`)
                 .then(res => {
                     const infos = res?.data[0]?.acf
                     if (infos) setInfos(infos)
