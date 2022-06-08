@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useQuery } from 'react-query'
 import axios from 'axios'
+import loader from 'data/podcast/loader.gif'
 
 const Wrapper = styled.div`
 `
@@ -26,8 +26,10 @@ const Iframes = styled.div`
 export default function Podcasts(props) {
 
     const [podcasts, setPodcasts] = useState([])
+    const [showLoader, setShowLoader] = useState(false)
 
     useEffect(() => {
+        setShowLoader(true)
         axios.get(`${env.FLOCKEO_URL}/wp-json/wp/v2/podcast`)
             .then(res => { setPodcasts(res.data) })
             .catch(err => { console.log(err) })
@@ -37,16 +39,22 @@ export default function Podcasts(props) {
         <Wrapper>
             <Container>
                 <h1>À écouter durant vos trajets !</h1>
-                <Iframes>
-                    {
-                        podcasts.map((e, index) => {
-                            return <iframe src={'https://open.spotify.com/embed/episode/' + e.acf.identifiant_spotify} width="90%" height="152" scrolling="no" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                        })
-                    }
-                </Iframes>
-                <br />
-                <a href="https://flockeo.com/le-vert-a-moitie-plein/" target="_blank"><p>Voir plus</p></a>
+                {showLoader == true && <img src={loader} />}
+                {
+                    <div style={showLoader === true ? { display: 'none' } : {}}>
+                        <Iframes>
+                            {
+                                podcasts.map((e, index) => {
+                                    return <iframe onLoad={(e) => { podcasts.lastIndexOf(index) ? setShowLoader(false) : null }}
+                                        src={'https://open.spotify.com/embed/episode/' + e.acf.identifiant_spotify} width="90%" height="152" scrolling="no" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                                })
+                            }
+                        </Iframes>
+                        <br />
+                        <a href="https://flockeo.com/le-vert-a-moitie-plein/" target="_blank"><p>Voir plus</p></a>
+                    </div>
+                }
             </Container>
-        </Wrapper>
+        </Wrapper >
     )
 }
