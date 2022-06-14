@@ -28,10 +28,11 @@ const Plus = styled.div`
 `
 export default function Uncertainty(props) {
   const { setRadiativeForcing } = useContext(ModalContext)
+  const { t } = ri18n.useTranslation()
 
   return props.transportation.uncertainty ? (
     <Wrapper onClick={() => setRadiativeForcing(true)}>
-      <Plus data-tip={'Impact des trainées'} data-for='uncertainty'>
+      <Plus data-tip={t('uncertainty.1')} data-for='uncertainty'>
         ?
       </Plus>
       <ReactTooltip id='uncertainty' />

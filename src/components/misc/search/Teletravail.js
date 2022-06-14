@@ -22,8 +22,8 @@ const Details = styled.button`
 export default function Teletravail() {
   const { start, setStartPlace, end, setEndPlace, teletravailTransportation } =
     useContext(SearchContext)
-
   const { setTeletravail } = useContext(ModalContext)
+  const { t } = ri18n.useTranslation()
 
   return (
     <Wrapper>
@@ -41,7 +41,7 @@ export default function Teletravail() {
       <Days />
       {start && end && teletravailTransportation && (
         <Details onClick={() => setTeletravail(true)}>
-          Voir et ajuster les détails du calcul
+          {t('teletravail.1')}
         </Details>
       )}
     </Wrapper>

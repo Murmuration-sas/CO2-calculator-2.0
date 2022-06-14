@@ -7,9 +7,6 @@ import Carpool from './transportation/Carpool'
 import Uncertainty from './transportation/Uncertainty'
 import logoFlockeoMoment from 'data/flockeo/logo-Flockeo-moments.png'
 
-import { useTranslation } from "react-i18next"
-import i18n from "i18next"
-
 const Wrapper = styled.div`
   position: relative;
   display: flex;
@@ -124,8 +121,7 @@ const Unit = styled.span`
 
 export default function Transportation(props) {
   const { setSource, setCO2E } = useContext(ModalContext)
-
-  const { t, i18n } = useTranslation()
+  const { t, i18n } = ri18n.useTranslation()
 
   const additionalStyle = (() => {
     var style = {}
@@ -199,7 +195,7 @@ export default function Transportation(props) {
       </ChartWrapper>
       {props.transportation.type == 'flockeo' &&
         <FlockeoWrapperButton>
-          <a href="https://flockeo.com/reserver-atelier-boost" target="_blank"><FlockeoButton>Découvrir ➜</FlockeoButton></a>
+          <a href={props.transportation.source} target="_blank"><FlockeoButton>{t('transportation.1')} ➜</FlockeoButton></a>
         </FlockeoWrapperButton>
       }
     </Wrapper>

@@ -8,7 +8,8 @@
     },
     "uncertainty": true,
     "description": {
-      "fr": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 2 000 km, 101 à 220 sièges :<br/>102 gCO2e/km/personne sans l'impact des traînées,<br/>186 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 2 000 à 3 500 km, >220 sièges<br/>: 97,4 gCO2e/km/personne sans l'impact des traînées,<br/>178 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>82,8 gCO2e/km/personne sans l'impact des traînées,<br/>151 gCO2e/km/personne avec l'impact des traînées"
+      "fr": "L'avion est proposé avec les tailles suivantes : <br/><br/>- 500 à 1 000 km, 101 à 220 sièges :<br/>126 gCO2e/km/personne sans l'impact des traînées,<br/>230 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 1 000 à 2 000 km, 101 à 220 sièges :<br/>102 gCO2e/km/personne sans l'impact des traînées,<br/>186 gCO2e/km/personne avec l'impact des traînées<br/><br/>- 2 000 à 3 500 km, >220 sièges:<br/> 97,4 gCO2e/km/personne sans l'impact des traînées,<br/>178 gCO2e/km/personne avec l'impact des traînées<br/><br/>- au delà de 3 500 km, >220 sièges :<br/>82,8 gCO2e/km/personne sans l'impact des traînées,<br/>151 gCO2e/km/personne avec l'impact des traînées",
+      "en": "The aircraft is offered with the following sizes: <br/><br/>- 500 to 1,000 km, 101 to 220 seats:<br/>126 gCO2e/km/person without the impact of contrails,<br/ >230 gCO2e/km/person with contrail impact<br/><br/>- 1000-2000 km, 101-220 seats:<br/>102 gCO2e/km/person without contrail impact,<br/>186 gCO2e/km/person with drag impact<br/><br/>- 2,000 to 3,500 km, >220 seats:<br/> 97.4 gCO2e/km/person without the impact of contrails,<br/>178 gCO2e/km/person with the impact of contrails<br/><br/>- beyond 3,500 km, >220 seats:<br/>82.8 gCO2e /km/person without the impact of contrails,<br/>151 gCO2e/km/person with the impact of contrails"
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Avion",
     "emoji": { "main": "✈️" },
@@ -47,7 +48,8 @@
       "en": "Car (thermal)"
     },
     "description": {
-      "fr": "193 gCO2e/km/véhicule ; Base Carbone ADEME, moyenne nationale toutes distances, toutes carburations. <br/>Les données intègrent l’amont et la combustion du carburant. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
+      "fr": "193 gCO2e/km/véhicule ; Base Carbone ADEME, moyenne nationale toutes distances, toutes carburations. <br/>Les données intègrent l’amont et la combustion du carburant. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières.",
+      "en": "193 gCO2e/km/vehicle; ADEME Carbon Base, national average for all distances, all fuels. <br/>The data includes upstream and fuel combustion. As with other modes of transport, they do not include vehicle manufacturing and emissions related to road infrastructure."
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
     "emoji": { "main": "🚗" },
@@ -68,7 +70,8 @@
       "en": "Car (electric)"
     },
     "description": {
-      "fr": "19,8 gCO2e/km/véhicule ; Base Carbone ADEME, Véhicule Electrique compact - \"Coeur de gamme\". <br/>Les données intègrent les émissions liées à l'électricité pour recharger le véhicule. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
+      "fr": "19,8 gCO2e/km/véhicule ; Base Carbone ADEME, Véhicule Electrique compact - \"Coeur de gamme\". <br/>Les données intègrent les émissions liées à l'électricité pour recharger le véhicule. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières.",
+      "en": "19.8 gCO2e/km/vehicle; ADEME Carbon Base, Compact Electric Vehicle - \"Heart of the range\". <br/>The data includes emissions related to electricity to charge the vehicle. As with other modes of transport, they do not include vehicle manufacturing and emissions related to road infrastructure."
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
     "emoji": { "main": "🚗", "secondary": "⚡" },
@@ -89,7 +92,8 @@
       "en": "Scooter and light motorcycle"
     },
     "description": {
-      "fr": "Deux roues thermiques < 250cm3 ; <br/>61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
+      "fr": "Deux roues thermiques < 250cm3 ; <br/>61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)",
+      "en": "Two thermal wheels < 250cm3; <br/>61.6 gCO2e/km/person; ADEME calculations from HBEFA (2020)"
     },
     "source": "https://www.ademe.fr/sites/default/files/assets/documents/51911_synthese-transport.pdf",
     "emoji": { "main": "🛵" },
@@ -111,7 +115,8 @@
       "en": "Motorbike"
     },
     "description": {
-      "fr": "Deux roues thermiques > 250cm3 ;<br/>168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
+      "fr": "Deux roues thermiques > 250cm3 ;<br/>168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)",
+      "en": "Two thermal wheels > 250cm3;<br/>168 gCO2e/km/person; ADEME calculations from HBEFA (2020)"
     },
     "emoji": { "main": "🏍️" },
     "default": true,
@@ -132,7 +137,8 @@
       "en": "Electrically assisted bicycle (or scooter)"
     },
     "description": {
-      "fr": " 2 gCO2e/km/personne pour la phase d'usage ; Etude ADEME \"Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement \"<br/><br/>Hypothèses Vélo Électrique :<br/>- Capacité de la batterie : 11,6 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique 417,6 Wh<br/>- Distance de 40 km par charge complète<br/>- 2 500 km/an<br/><br/>Hypothèses Trotinette Électrique :<br/>- Capacité de la batterie : 2,5 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique : 90 Wh<br/>- 300 charges par an<br/>- 1 000 km/an"
+      "fr": "2 gCO2e/km/personne pour la phase d'usage ; Etude ADEME \"Modélisation et évaluation environnementale de produits de consommation et biens d’Équipement \"<br/><br/>Hypothèses Vélo Électrique :<br/>- Capacité de la batterie : 11,6 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique 417,6 Wh<br/>- Distance de 40 km par charge complète<br/>- 2 500 km/an<br/><br/>Hypothèses Trotinette Électrique :<br/>- Capacité de la batterie : 2,5 Ah<br/>- Tension : 36 V<br/>- Capacité énergétique : 90 Wh<br/>- 300 charges par an<br/>- 1 000 km/an",
+      "en": "2 gCO2e/km/person for the use phase; ADEME study \"Modeling and environmental assessment of consumer products and capital goods\"<br/><br/>Electric bike hypotheses:<br/>- Battery capacity: 11.6 Ah<br/>- Voltage: 36 V<br/>- Energy capacity 417.6 Wh<br/>- 40 km distance per full charge<br/>- 2,500 km/year<br/><br/>Electric scooter assumptions:<br/> br/>- Battery capacity: 2.5 Ah<br/>- Voltage: 36 V<br/>- Energy capacity: 90 Wh<br/>- 300 charges per year<br/>- 1,000 km/ year"
     },
     "emoji": { "main": "🚴", "secondary": "⚡" },
     "default": true,
@@ -153,7 +159,8 @@
       "en": "Public transport (Metro, RER or tram)"
     },
     "description": {
-      "fr": "Nous faisons une moyenne des facteurs d'émissions des trois modes de transport :<br/><br/><b>Métro</b> : 2,5 gCO2e/km/personne ; Base Carbone ADEME, Métro Ile de France<br/><br/><b>RER</b> : 4,1 gCO2e/km/personne ; Base Carbone ADEME<br/><br/><b>Tramway</b> : 2,2 gCO2e/km/personne ; Base Carbone ADEME, Tramway - Ile de France"
+      "fr": "Nous faisons une moyenne des facteurs d'émissions des trois modes de transport :<br/><br/><b>Métro</b> : 2,5 gCO2e/km/personne ; Base Carbone ADEME, Métro Ile de France<br/><br/><b>RER</b> : 4,1 gCO2e/km/personne ; Base Carbone ADEME<br/><br/><b>Tramway</b> : 2,2 gCO2e/km/personne ; Base Carbone ADEME, Tramway - Ile de France",
+      "en": "We average the emission factors of the three modes of transport:<br/><br/><b>Metro</b>: 2.5 gCO2e/km/person; ADEME Carbon Base, Ile de France Metro<br/><br/><b>RER</b>: 4.1 gCO2e/km/person; ADEME Carbon Base<br/><br/><b>Tramway</b>: 2.2 gCO2e/km/person; ADEME Carbon Base, Tramway - Ile de France"
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=m%C3%A9tro",
     "emoji": { "main": "🚇" },
@@ -175,7 +182,8 @@
       "en": "TGV or intercity"
     },
     "description": {
-      "fr": "Nous faisons une moyenne des facteurs d'émissions des deux modes de transport :<br/><br/><b>TGV</b> : 1,73 gCO2e/km/personne : Base Carbone ADEME<br/><br/><b>Intercités</b> : 5,29 gCO2e/km/personne ; Base Carbone ADEME"
+      "fr": "Nous faisons une moyenne des facteurs d'émissions des deux modes de transport :<br/><br/><b>TGV</b> : 1,73 gCO2e/km/personne : Base Carbone ADEME<br/><br/><b>Intercités</b> : 5,29 gCO2e/km/personne ; Base Carbone ADEME",
+      "en": "We average the emission factors of the two modes of transport:<br/><br/><b>TGV</b>: 1.73 gCO2e/km/person: Base Carbone ADEME<br/><br /><b>Intercity</b>: 5.29 gCO2e/km/person; ADEME Carbon Base"
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
     "emoji": { "main": "🚄" },
@@ -197,7 +205,8 @@
       "en": "Bus (thermal)"
     },
     "description": {
-      "fr": "103 gCO2e/km/personne ; Taux de remplissage : 10 personnes ; Base Carbone ADEME, Autobus - Gazole"
+      "fr": "103 gCO2e/km/personne ; Taux de remplissage : 10 personnes ; Base Carbone ADEME, Autobus - Gazole",
+      "en": "103 gCO2e/km/person; Filling rate: 10 people; ADEME Carbon Base, Buses - Diesel"
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autobus",
     "emoji": { "main": "🚌" },
@@ -219,7 +228,8 @@
       "en": "Bus"
     },
     "description": {
-      "fr": "35,2 gCO2e/km/personne ; Taux de remplissage : 30 personnes (62%) ; Base Carbone ADEME, Autocar - Gazole"
+      "fr": "35,2 gCO2e/km/personne ; Taux de remplissage : 30 personnes (62%) ; Base Carbone ADEME, Autocar - Gazole",
+      "en": "35.2 gCO2e/km/person; Occupancy rate: 30 people (62%); Carbon Base ADEME, Coach - Diesel"
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autocar",
     "emoji": { "main": "🚐" },
@@ -241,7 +251,8 @@
       "en": "Bike or walk"
     },
     "description": {
-      "fr": "0 gCO2e/km/personne ; ADEME"
+      "fr": "0 gCO2e/km/personne ; ADEME",
+      "en": "0 gCO2e/km/person; ADEME"
     },
     "emoji": { "main": "🚴" },
     "default": false,
@@ -262,7 +273,8 @@
       "en": "Flockéo Moments"
     },
     "description": {
-      "fr": "Voyagez depuis chez vous et découvrez, à l’aide de professionnels passionnés, des destinations sous un autre œil."
+      "fr": "Voyagez depuis chez vous et découvrez, à l’aide de professionnels passionnés, des destinations sous un autre œil.",
+      "en": "Travel from home and discover, with the help of passionate professionals, destinations from a different perspective"
     },
     "source": "https://flockeo.com/reserver-atelier-boost",
     "emoji": { "main": "🌳" },

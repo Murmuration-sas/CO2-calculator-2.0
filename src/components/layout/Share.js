@@ -51,8 +51,9 @@ export default function Share(props) {
     setTypeShare,
     setEmbedOpen,
   } = useContext(UXContext)
+  const absoluteUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname + (url ? url : '')
+  const { t } = ri18n.useTranslation()
 
-  const absoluteUrl = `${window.location.origin}${url}`
   return (
     <Panel
       small={props.small}
@@ -62,16 +63,16 @@ export default function Share(props) {
       index={1}
     >
       <Title>
-        Partager{' '}
+        {t('share.1') + ' '}
         <Select
           fancy
           value={typeShare}
           onChange={setTypeShare}
           options={[
-            { value: 'simulator', label: `ce simulateur` },
+            { value: 'simulator', label: t('share.2') },
             {
               value: 'result',
-              label: `ce résultat`,
+              label: t('share.3'),
             },
           ]}
         />

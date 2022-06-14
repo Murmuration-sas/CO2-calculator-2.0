@@ -6,6 +6,7 @@ import useOnScreen from 'hooks/useOnScreen'
 
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
+import JsxParser from 'react-jsx-parser'
 
 const Wrapper = styled.div`
   width: 47rem;
@@ -67,6 +68,7 @@ const ButtonWrapper = styled.div`
 export default function Learning() {
   const ref = useRef()
   const isOnScreen = useOnScreen(ref, '-100px')
+  const { t } = ri18n.useTranslation()
 
   return (
     <Wrapper id='informations'>
@@ -83,37 +85,32 @@ export default function Learning() {
                 '0%'
               )}
             </Number>
-            des
+            {t('learning.1')}
           </FirstLine>
           <BigText>
-            émissions de <Color>CO2</Color>
+            <JsxParser
+              jsx={t('learning.2')}
+            />
           </BigText>
         </Statistic>
         <Strong>
-          "Hors confinement", le secteur des transports est le 1er secteur
-          émetteur de gaz à effet de serre.
+          {t('learning.3')}
         </Strong>
         <Text>
-          Jusqu’à peu, se déplacer faisait partie intégrante de notre vie
-          sociale et professionnelle. À tel point que tout notre environnement
-          est structuré autour des transports. Tout invite au voyage, qu’il soit
-          court ou long. Mais comment révolutionner nos trajets ? Découvrez des
-          pistes de réflexion avec cette{' '}
-          <MagicLink to='https://multimedia.ademe.fr/infographies/infographie-la-mobilite-ademe/'>
-            infographie de l'ADEME
-          </MagicLink>
+          <JsxParser
+            component={{ MagicLink }}
+            jsx={t('learning.4')}
+          />
         </Text>
-
         <Text>
-          Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
-          calculer l'ensemble de votre empreinte sur le climat grace à notre{' '}
-          <MagicLink to={'https://nosgestesclimat.fr/'}>
-            simulateur Nos Gestes Climat
-          </MagicLink>
+          <JsxParser
+            component={{ MagicLink }}
+            jsx={t('learning.5')}
+          />
         </Text>
         <ButtonWrapper>
           <Button to={'https://nosgestesclimat.fr/'}>
-            Découvrir Nos Gestes Climat
+            {t('learning.6')}
           </Button>
         </ButtonWrapper>
       </Content>

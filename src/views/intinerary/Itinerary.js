@@ -34,10 +34,11 @@ const RightColumnWrapper = styled.main`
 
 export default function Itinerary() {
   const iframe = useIframe(true)
+  const { t } = ri18n.useTranslation()
 
   useEffect(() => {
     if (!iframe) {
-      document.title = 'Itinéraire | Mon Impact Transport'
+      document.title = t('common.2') + ' | ' + t('common.1')
       document.getElementById('Accueil')?.focus()
       document.activeElement.blur()
     }

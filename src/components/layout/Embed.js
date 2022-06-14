@@ -22,6 +22,7 @@ const Title = styled.div`
 export default function Embed(props) {
   const { embedOpen, setEmbedOpen, url, typeShare, setTypeShare } =
     useContext(UXContext)
+  const { t } = ri18n.useTranslation()
 
   return (
     <Panel
@@ -33,21 +34,21 @@ export default function Embed(props) {
       index={0}
     >
       <Title>
-        Intégrer{' '}
+        {t('embed.1') + ' '}
         <Select
           fancy
           value={typeShare}
           onChange={setTypeShare}
           options={[
-            { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `ce résultat` },
+            { value: 'simulator', label: t('embed.2') },
+            { value: 'result', label: t('embed.3') }
           ]}
         />
       </Title>
       <Code id={props.id} url={url} />
       {props.children && (
         <>
-          <h3>Options d'intégration</h3>
+          <h3>{t('embed.4')}</h3>
           {props.children}
         </>
       )}

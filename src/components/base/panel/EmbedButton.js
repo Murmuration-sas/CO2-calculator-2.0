@@ -48,13 +48,14 @@ const Embed = styled.svg`
 `
 export default function EmbedButton(props) {
   const { installPrompt } = useContext(UXContext)
+  const { t } = ri18n.useTranslation()
 
   return (
     <StyledWrapper
       open={props.open}
       onClick={props.onClick}
       four={installPrompt}
-      tooltip={'Intégrer ce simulateur'}
+      tooltip={t('embedButton.1')}
     >
       <Embed
         open={props.open}

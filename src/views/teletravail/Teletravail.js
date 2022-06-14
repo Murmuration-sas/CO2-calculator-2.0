@@ -30,10 +30,11 @@ const RightColumnWrapper = styled.main`
 
 export default function Teletravail() {
   const iframe = useIframe(true)
+  const { t } = ri18n.useTranslation()
 
   useEffect(() => {
     if (!iframe) {
-      document.title = 'Télétravail | Mon Impact Transport'
+      document.title = t('common.3') + ' | ' + t('common.1')
       document.getElementById('Accueil')?.focus()
       document.activeElement.blur()
     }

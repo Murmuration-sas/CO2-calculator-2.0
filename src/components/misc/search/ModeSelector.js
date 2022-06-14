@@ -26,7 +26,7 @@ const Tab = styled(MagicLink)`
 
   &:hover {
     background-color: ${(props) =>
-      props.theme.colors[props.current ? 'secondLight' : 'footer']};
+    props.theme.colors[props.current ? 'secondLight' : 'footer']};
   }
 
   ${(props) => props.theme.mq.small} {
@@ -38,23 +38,24 @@ const Tab = styled(MagicLink)`
 `
 export default function ModeSelector() {
   const location = useLocation()
+  const { t } = ri18n.useTranslation()
+
   return (
     <Wrapper>
       {/* <Tab current={location.pathname === '/'} to='/'>
         Distance
       </Tab> */}
       <Tab current={location.pathname === '/'} to='/'>
-        Itinéraire
+        {t('common.2')}
       </Tab>
       <Tab
         current={location.pathname === '/teletravail'}
         to='/teletravail'
-        title={`Télétravail${
-          location.pathname === '/teletravail' ? ' : page actuelle' : ''
-        }`}
+        title={`Télétravail${location.pathname === '/teletravail' ? ' : page actuelle' : ''
+          }`}
         large
       >
-        Télétravail
+        {t('common.3')}
       </Tab>
       <Tab current={location.pathname === '/crowdfunding'} to='https://crowdfunding.flockeo.com'>
         Crowdfunding

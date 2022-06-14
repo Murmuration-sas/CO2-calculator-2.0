@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import MagicLink from 'components/base/MagicLink'
 import loader from 'data/podcast/loader.gif'
 
 const Wrapper = styled.div`
@@ -27,6 +28,7 @@ export default function Podcasts(props) {
 
     const [podcasts, setPodcasts] = useState([])
     const [showLoader, setShowLoader] = useState(false)
+    const { t } = ri18n.useTranslation()
 
     useEffect(() => {
         setShowLoader(true)
@@ -38,7 +40,7 @@ export default function Podcasts(props) {
     return (
         <Wrapper>
             <Container>
-                <h1>À écouter durant vos trajets !</h1>
+                <h1>{t('podcasts.1')}</h1>
                 {showLoader == true && <img src={loader} />}
                 {
                     <div style={showLoader === true ? { display: 'none' } : {}}>
@@ -51,7 +53,7 @@ export default function Podcasts(props) {
                             }
                         </Iframes>
                         <br />
-                        <a href="https://flockeo.com/le-vert-a-moitie-plein/" target="_blank"><p>Voir plus</p></a>
+                        <MagicLink to="https://flockeo.com/le-vert-a-moitie-plein">{t('podcasts.2')}</MagicLink>
                     </div>
                 }
             </Container>

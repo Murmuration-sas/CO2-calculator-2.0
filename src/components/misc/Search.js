@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Switch, Route } from 'react-router-dom'
-import { useTranslation } from "react-i18next"
 
 import TransportationContext from 'utils/TransportationContext'
 import ModalContext from 'utils/ModalContext'
@@ -60,12 +59,13 @@ const StyledCheckbox = styled(Checkbox)`
     font-size: 0.75rem;
   }
 `
+
 export default function Search() {
   const { displayAll, setDisplayAll, carpool, setCarpool } = useContext(
     TransportationContext
   )
   const { setOccupancy } = useContext(ModalContext)
-  const { t } = useTranslation()
+  const { t } = ri18n.useTranslation()
 
   return (
     <Wrapper>

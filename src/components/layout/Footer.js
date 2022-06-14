@@ -70,6 +70,8 @@ const Accessibility = styled.p`
 `
 export default function Footer(props) {
   const iframe = useIframe()
+  const { t } = ri18n.useTranslation()
+
   return iframe ? (
     <>
       <StyledLink to={'https://monimpacttransport.fr'}>
@@ -141,7 +143,7 @@ export default function Footer(props) {
           <Datagir />
         </Logos>
       </LogosWrapper>
-      <Accessibility>accessibilité : non conforme</Accessibility>
+      <Accessibility>{t('footer.1')}</Accessibility>
     </Wrapper>
   )
 }

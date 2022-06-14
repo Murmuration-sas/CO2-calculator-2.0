@@ -16,7 +16,7 @@ const Text = styled.code`
   cursor: pointer;
 
   &:before {
-    content: 'Copié !';
+    content: '${(props) => props.onClickText}';
     position: absolute;
     bottom: 0;
     right: 0;
@@ -32,13 +32,15 @@ const Explication = styled.p`
   font-style: italic;
 `
 export default function Code(props) {
-  const script = '<iframe src="' + window.location.protocol + "//" + window.location.hostname + window.location.pathname + '" style="border: medium none; width: 100%; display: block; margin: 0px auto; overflow: hidden; height: 982px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" />'
-
   const [copied, setCopied] = useState(false)
+  const script = '<iframe src="' + window.location.protocol + "//" + window.location.hostname + window.location.pathname + (props.url ? props.url : '') + '" style="border: medium none; width: 100%; display: block; margin: 0px auto; overflow: hidden; height: 982px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" />'
+  const { t } = ri18n.useTranslation()
+
   return (
     <Wrapper>
       <Text
         copied={copied}
+        onClickText={t('code.2')}
         onClick={() => {
           if (copy(script)) {
             setCopied(true)
@@ -48,8 +50,7 @@ export default function Code(props) {
         {script}
       </Text>
       <Explication>
-        Copiez ce code puis ajoutez-le où vous souhaitez qu'il s'affiche sur
-        votre site web
+        {t('code.1')}
       </Explication>
     </Wrapper>
   )

@@ -43,6 +43,7 @@ const Details = styled.button`
 export default function PercentFootprint(props) {
   const { setFootprint } = useContext(ModalContext)
   const { yearlyFootprint } = useContext(SearchContext)
+  const { t } = ri18n.useTranslation()
 
   const [percent, setPercent] = useState(0)
   useEffect(() => {
@@ -53,12 +54,12 @@ export default function PercentFootprint(props) {
   return (
     <Wrapper>
       <Result>
-        <Start>soit</Start> <Number>{percent}</Number> <Percent>%</Percent>
+        <Start>{t('percentFootprint.1')}</Start> <Number>{percent}</Number><Percent>%</Percent>
         <br />
-        d'économisé sur mon empreinte carbone annuelle
+        {t('percentFootprint.2')}
       </Result>
       <Details onClick={() => setFootprint(true)}>
-        Préciser ou calculer mon empreinte carbone
+        {t('percentFootprint.3')}
       </Details>
     </Wrapper>
   )

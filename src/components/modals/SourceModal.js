@@ -16,6 +16,7 @@ export default function SourceModal() {
   )
 
   const [curTransportation, setCurTransportation] = useState(null)
+  const { t, i18n } = ri18n.useTranslation()
 
   useEffect(() => {
     const everyTransportations = [
@@ -33,13 +34,13 @@ export default function SourceModal() {
     <Modal open={source} setOpen={setSource}>
       {curTransportation && (
         <>
-          <Title>{curTransportation.label.fr}</Title>
+          <Title>{curTransportation.label[i18n.language]}</Title>
           <Text
             dangerouslySetInnerHTML={{
-              __html: curTransportation.description.fr,
+              __html: curTransportation.description[i18n.language],
             }}
           />
-          <MagicLink to={curTransportation.source}>Source</MagicLink>
+          {curTransportation.source && <MagicLink to={curTransportation.source}>Source</MagicLink>}
         </>
       )}
     </Modal>

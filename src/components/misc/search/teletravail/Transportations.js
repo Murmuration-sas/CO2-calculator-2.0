@@ -23,6 +23,7 @@ export default function Transportations() {
     TransportationContext
   )
   const { start, end, teletravailTransportation } = useContext(SearchContext)
+  const { t, i18n } = ri18n.useTranslation()
 
   return (
     start &&
@@ -42,7 +43,7 @@ export default function Transportations() {
         <Result>
           {transportations.find(
             (transportation) => transportation.id === teletravailTransportation
-          )?.label.fr || 'Choisissez votre mode de transport'}
+          )?.label[i18n.language] || t('transportations.1')}
         </Result>
       </Wrapper>
     )

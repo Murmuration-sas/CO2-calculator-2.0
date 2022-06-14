@@ -13,7 +13,7 @@ const Content = styled.div`
   background-color: ${(props) => props.displayTheme.colors.background};
   border: 0.125rem solid
     ${(props) =>
-      props.displayTheme.colors[props.current ? 'main' : 'background']};
+    props.displayTheme.colors[props.current ? 'main' : 'background']};
   border-radius: 1rem;
   cursor: pointer;
 `
@@ -37,12 +37,14 @@ const Tile = styled.div`
       : props.displayTheme.colors.background};
   border: 2px solid
     ${(props) =>
-      props.active
-        ? props.displayTheme.colors.main
-        : props.displayTheme.colors.text};
+    props.active
+      ? props.displayTheme.colors.main
+      : props.displayTheme.colors.text};
   border-radius: 0.5em;
 `
 export default function Theme(props) {
+  const { t } = ri18n.useTranslation()
+
   return (
     <Wrapper>
       <Content
@@ -50,7 +52,7 @@ export default function Theme(props) {
         current={props.current}
         displayTheme={props.theme}
       >
-        <Title displayTheme={props.theme}>{props.theme.name}</Title>
+        <Title displayTheme={props.theme}>{t('theme.' + props.theme.name)}</Title>
         <Tiles>
           <Tile displayTheme={props.theme} />
           <Tile displayTheme={props.theme} />

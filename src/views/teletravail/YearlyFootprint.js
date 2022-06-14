@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import JsxParser from 'react-jsx-parser'
 
 const Wrapper = styled.div`
 `
@@ -26,7 +27,7 @@ const Emitted = styled.div`
 
   ${(props) => props.theme.mq.small} {
     max-width: ${(props) =>
-      props.percent !== 100 ? 'calc(100% - 5rem)' : 'auto'};
+    props.percent !== 100 ? 'calc(100% - 5rem)' : 'auto'};
     min-width: ${(props) => (props.percent ? '5rem' : 'auto')};
   }
 `
@@ -67,6 +68,8 @@ const Disclaimer = styled.p`
   text-align: center;
 `
 export default function YearlyFootprint(props) {
+  const { t } = ri18n.useTranslation()
+
   return (
     <Wrapper>
       <Bar>
@@ -79,14 +82,14 @@ export default function YearlyFootprint(props) {
           >
             <Number>{props.emitted}</Number> kgCO2<sub>e</sub>
             <br />
-            émis
+            {t('yearlyFootprint.1')}
             <br />
             <Small
               visible={
                 (props.emitted / (props.emitted + props.saved)) * 100 >= 25
               }
             >
-              sur {props.presentiel} jour{props.presentiel > 1 && 's'}
+              {t('yearlyFootprint.2')} {props.presentiel} {props.presentiel > 1 ? t('yearlyFootprint.4') : t('yearlyFootprint.3')}
             </Small>
           </Content>
         </Emitted>
@@ -98,23 +101,21 @@ export default function YearlyFootprint(props) {
           >
             <Number>{props.saved}</Number> kgCO2<sub>e</sub>
             <br />
-            évité{props.saved > 1 && 's'}
+            {props.saved > 1 ? t('yearlyFootprint.6') : t('yearlyFootprint.5')}
             <br />
             <Small
               visible={
                 (props.saved / (props.emitted + props.saved)) * 100 >= 25
               }
             >
-              {' '}
-              sur {props.teletravail} jour{props.teletravail > 1 && 's'}
+              {' ' + t('yearlyFootprint.2') + ' '}
+              {props.teletravail} {props.teletravail > 1 ? t('yearlyFootprint.4') : t('yearlyFootprint.3')}
             </Small>
           </Content>
         </Saved>
       </Bar>
       <Disclaimer>
-        <strong>à l’année</strong> sur mes déplacements.
-        <br />
-        (d'autres émissions ont peut-être augmenté)
+        <JsxParser jsx={t('yearlyFootprint.7')} />
       </Disclaimer>
     </Wrapper>
   )

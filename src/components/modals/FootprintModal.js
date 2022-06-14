@@ -7,6 +7,7 @@ import Modal from 'components/base/Modal'
 import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
 import MagicLink from 'components/base/MagicLink'
+import JsxParser from 'react-jsx-parser'
 
 const Title = styled.h2``
 const Text = styled.p``
@@ -22,37 +23,32 @@ const ButtonWrapper = styled.div`
 export default function SetFootprintModal() {
   const { footprint: open, setFootprint: setOpen } = useContext(ModalContext)
   const { yearlyFootprint, setYearlyFootprint } = useContext(SearchContext)
+  const { t } = ri18n.useTranslation()
 
   const [pristine, setPristine] = useState(true)
   useEffect(() => {
     setPristine(true)
   }, [open])
+
   return (
     <Modal open={open} setOpen={setOpen}>
-      <Title>Mon empreinte carbone</Title>
+      <Title>{t('footprintModal.1')}</Title>
       <Text>
-        Aujourd'hui, un·e français·e en émet en moyenne 9,9 tonnes de gaz à
-        effet de serre (GES) par an (
-        <MagicLink to='https://www.statistiques.developpement-durable.gouv.fr/estimation-de-lempreinte-carbone-de-1995-2019'>
-          source
-        </MagicLink>
-        ).
+        <JsxParser
+          components={{ MagicLink }}
+          jsx={t('footprintModal.2')}
+        />
       </Text>
       <Text>
-        La cible à atteindre pour{' '}
-        <MagicLink
-          to={
-            'https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/'
-          }
-        >
-          respecter l'accord de Paris
-        </MagicLink>{' '}
-        est de moins de 2 tonnes de GES par an et par personne d'ici 2050.
+        <JsxParser
+          components={{ MagicLink }}
+          jsx={t('footprintModal.3')}
+        />
       </Text>
       <Text>
-        Si vous connaissez{' '}
-        <label htmlFor='empreinte'>votre empreinte carbone annuelle</label>,
-        vous pouvez la modifier :{' '}
+        {t('footprintModal.4') + ' '}
+        <label htmlFor='empreinte'>{t('footprintModal.5')}</label>,
+        {' ' + t('footprintModal.6') + ' '}
         <StyledTextInput
           name='empreinte'
           type='number'
@@ -62,18 +58,17 @@ export default function SetFootprintModal() {
             setPristine(false)
           }}
         />{' '}
-        tonnes
+        {t('footprintModal.7')}
       </Text>
       <Text>
-        Si vous ne la connaissez pas, vous pouvez la calculer simplement grâce à
-        notre simulateur{' '}
-        <MagicLink to={`https://nosgestesclimat.fr/`}>
-          Nos Gestes Climat
-        </MagicLink>
+        <JsxParser
+          components={{ MagicLink }}
+          jsx={t('footprintModal.8')}
+        />
       </Text>
       {!pristine && (
         <ButtonWrapper>
-          <Button onClick={() => setOpen(false)}>Valider</Button>
+          <Button onClick={() => setOpen(false)}>{t('footprintModal.9')}</Button>
         </ButtonWrapper>
       )}
     </Modal>

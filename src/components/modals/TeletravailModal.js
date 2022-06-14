@@ -7,6 +7,7 @@ import Modal from 'components/base/Modal'
 import FancySelect from 'components/base/FancySelect'
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
+import JsxParser from 'react-jsx-parser'
 
 const Title = styled.h2``
 const Text = styled.p``
@@ -19,17 +20,17 @@ export default function TeletravailModal() {
     useContext(ModalContext)
   const { days, setDays, holidays, setHolidays, extraKm, setExtraKm } =
     useContext(SearchContext)
-
   const [pristine, setPristine] = useState(true)
   useEffect(() => {
     setPristine(true)
   }, [open])
+  const { t } = ri18n.useTranslation()
 
   return (
     <Modal open={open} setOpen={setOpen}>
-      <Title>Mode télétravail</Title>
+      <Title>{t('teletravailModal.1')}</Title>
       <Text>
-        Nous comptons{' '}
+        {t('teletravailModal.2') + ' '}
         <FancySelect
           value={days}
           onChange={(value) => {
@@ -37,16 +38,16 @@ export default function TeletravailModal() {
             setPristine(false)
           }}
           options={[
-            { value: '1', label: `1 jour` },
-            { value: '2', label: `2 jours` },
-            { value: '3', label: `3 jours` },
-            { value: '4', label: `4 jours` },
-            { value: '5', label: `5 jours` },
-            { value: '6', label: `6 jours` },
-            { value: '7', label: `7 jours` },
+            { value: '1', label: `1 ${t('teletravailModal.3')}` },
+            { value: '2', label: `2 ${t('teletravailModal.4')}` },
+            { value: '3', label: `3 ${t('teletravailModal.4')}` },
+            { value: '4', label: `4 ${t('teletravailModal.4')}` },
+            { value: '5', label: `5 ${t('teletravailModal.4')}` },
+            { value: '6', label: `6 ${t('teletravailModal.4')}` },
+            { value: '7', label: `7 ${t('teletravailModal.4')}` }
           ]}
         />{' '}
-        travaillé{days > 1 && 's'} par semaine et{' '}
+        {(days > 1) ? t('teletravailModal.6') : t('teletravailModal.5')} {t('teletravailModal.7') + ' '}
         <FancySelect
           value={holidays}
           onChange={(value) => {
@@ -54,25 +55,25 @@ export default function TeletravailModal() {
             setPristine(false)
           }}
           options={[
-            { value: '1', label: `1 semaine` },
-            { value: '2', label: `2 semaines` },
-            { value: '3', label: `3 semaines` },
-            { value: '4', label: `4 semaines` },
-            { value: '5', label: `5 semaines` },
-            { value: '6', label: `6 semaines` },
-            { value: '7', label: `7 semaines` },
-            { value: '8', label: `8 semaines` },
-            { value: '9', label: `9 semaines` },
-            { value: '10', label: `10 semaines` },
-            { value: '11', label: `11 semaines` },
-            { value: '12', label: `12 semaines` },
-            { value: '13', label: `13 semaines` },
+            { value: '1', label: `1 ${t('teletravailModal.8')}` },
+            { value: '2', label: `2 ${t('teletravailModal.9')}` },
+            { value: '3', label: `3 ${t('teletravailModal.9')}` },
+            { value: '4', label: `4 ${t('teletravailModal.9')}` },
+            { value: '5', label: `5 ${t('teletravailModal.9')}` },
+            { value: '6', label: `6 ${t('teletravailModal.9')}` },
+            { value: '7', label: `7 ${t('teletravailModal.9')}` },
+            { value: '8', label: `8 ${t('teletravailModal.9')}` },
+            { value: '9', label: `9 ${t('teletravailModal.9')}` },
+            { value: '10', label: `10 ${t('teletravailModal.9')}` },
+            { value: '11', label: `11 ${t('teletravailModal.9')}` },
+            { value: '12', label: `12 ${t('teletravailModal.9')}` },
+            { value: '13', label: `13 ${t('teletravailModal.9')}` },
           ]}
         />{' '}
-        de congé par an (+ 7 jours fériés).
+        {t('teletravailModal.10')}
       </Text>
       <Text>
-        Nous considérons que{' '}
+        {t('teletravailModal.11') + ' '}
         <FancySelect
           value={extraKm}
           onChange={(value) => {
@@ -80,44 +81,32 @@ export default function TeletravailModal() {
             setPristine(false)
           }}
           options={[
-            { value: '0.0', label: `0 %` },
-            { value: '0.10', label: `10 %` },
-            { value: '0.15', label: `15 %` },
-            { value: '0.20', label: `20 %` },
-            { value: '0.25', label: `25 % (défaut)` },
-            { value: '0.30', label: `30 %` },
-            { value: '0.35', label: `35 %` },
-            { value: '0.40', label: `40 %` },
-            { value: '0.45', label: `45 %` },
-            { value: '0.50', label: `50 %` },
+            { value: '0.0', label: `0%` },
+            { value: '0.10', label: `10%` },
+            { value: '0.15', label: `15%` },
+            { value: '0.20', label: `20%` },
+            { value: '0.25', label: `25% (${t('teletravailModal.12')})` },
+            { value: '0.30', label: `30%` },
+            { value: '0.35', label: `35%` },
+            { value: '0.40', label: `40%` },
+            { value: '0.45', label: `45%` },
+            { value: '0.50', label: `50%` },
           ]}
         />{' '}
-        des émissions évitées via le télétravail sont émises pour d'autres
-        trajets (courses, école, etc.). Cette valeur par défaut (25
-        <span
-          dangerouslySetInnerHTML={{
-            __html: '&nbsp;',
-          }}
+        <JsxParser
+          components={{ MagicLink }}
+          jsx={t('teletravailModal.13')}
         />
-        %) est tirée de cette{' '}
-        <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/3776-caracterisation-des-effets-rebond-induits-par-le-teletravail.html'>
-          étude de l'ADEME
-        </MagicLink>
-        .
       </Text>
       <Text>
-        Les autres effets rebonds non liés aux déplacements (consommation
-        d'électricité du foyer, achat de matériel pour le télétravail, etc.) ne
-        sont pas modélisés ici. Pour donner un ordre de grandeur,{' '}
-        <MagicLink to='https://monconvertisseurco2.fr/?co2=248&equivalents=27006_27002_27976_27010_206589'>
-          la fabrication d'un écran d'ordinateur émet autant que 1 285 km de
-          voiture (248 kgCO2e)
-        </MagicLink>
-        .
+        <JsxParser
+          components={{ MagicLink }}
+          jsx={t('teletravailModal.14')}
+        />
       </Text>
       {!pristine && (
         <ButtonWrapper>
-          <Button onClick={() => setOpen(false)}>Valider</Button>
+          <Button onClick={() => setOpen(false)}>{t('teletravailModal.15')}</Button>
         </ButtonWrapper>
       )}
     </Modal>

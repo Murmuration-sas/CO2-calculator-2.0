@@ -20,6 +20,7 @@ export default function Days() {
     setTeletravail,
     days,
   } = useContext(SearchContext)
+  const { t } = ri18n.useTranslation()
 
   useEffect(() => {
     if (presentiel + teletravail !== days) {
@@ -38,7 +39,7 @@ export default function Days() {
     teletravailTransportation && (
       <Wrapper>
         <Selector
-          label='Présentiel'
+          label={t('days.1')}
           value={presentiel}
           onChange={(value) => {
             setPresentiel(value)
@@ -46,7 +47,7 @@ export default function Days() {
           }}
         />
         <Selector
-          label='Télétravail'
+          label={t('days.2')}
           value={teletravail}
           onChange={(value) => {
             setTeletravail(value)

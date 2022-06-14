@@ -22,7 +22,7 @@ const Text = styled.input`
   overflow: hidden;
 
   &:before {
-    content: 'Copié !';
+    content: '${(props) => props.onClickText}';
     position: absolute;
     bottom: 0;
     right: 0;
@@ -60,6 +60,7 @@ const Check = styled.svg`
 `
 export default function Code(props) {
   const [copied, setCopied] = useState(false)
+  const { t } = ri18n.useTranslation()
 
   useEffect(() => {
     return () => {
@@ -72,6 +73,7 @@ export default function Code(props) {
       <Text
         readOnly={true}
         value={props.url}
+        onClickText={t('link.2')}
         onClick={() => {
           if (copy(props.url)) {
             setCopied(true)
@@ -85,7 +87,7 @@ export default function Code(props) {
           }
         }}
       >
-        Copier{' '}
+        {t('link.1') + ' '}
         <Check
           copied={copied}
           height='417pt'

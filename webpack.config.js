@@ -14,7 +14,7 @@ module.exports = env => {
     data: {}
   }
 
-  _env.pathnames.forEach((pathname, index) => { _env.data = { ..._env.data, ...dotEnv.parse(Buffer.from(fs.readFileSync(pathname))) } })
+  _env.pathnames.forEach((pathname) => { _env.data = { ..._env.data, ...dotEnv.parse(Buffer.from(fs.readFileSync(pathname))) } })
 
   return {
     entry: './src/index.js',
@@ -24,7 +24,11 @@ module.exports = env => {
     },
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      modules: ["src", "node_modules"]
+      modules: ["src", "node_modules"],
+      alias: {
+        'lodash': path.resolve(__dirname, './node_modules/lodash'),
+        'ri18n': path.resolve(__dirname, './node_modules/react-i18next')
+      }
     },
     module: {
       rules: [{
@@ -52,6 +56,10 @@ module.exports = env => {
       }),
       new webpack.DefinePlugin({
         "env": JSON.stringify(_env.data)
+      }),
+      new webpack.ProvidePlugin({
+        '_': 'lodash',
+        'ri18n': 'ri18n'
       })
     ],
     devServer: {

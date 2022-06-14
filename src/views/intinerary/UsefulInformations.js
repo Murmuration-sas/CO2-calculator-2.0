@@ -45,6 +45,7 @@ export default function UsefulInformations(props) {
     const [infos, setInfos] = useState({})
     const [country, setCountry] = useState('')
     const [searchState, setSearchState] = useRecoilState(searchAtomState)
+    const { t } = ri18n.useTranslation()
 
     useEffect(() => {
         if (country) {
@@ -72,7 +73,7 @@ export default function UsefulInformations(props) {
     return (
         <Wrapper>
             {Object.keys(infos).length != 0 && <Container>
-                <h1>Infos utiles</h1>
+                <h1>{t('usefulInformations.1')}</h1>
                 <p style={{ marginTop: '-1rem', marginBottom: '2rem' }}>{country}</p>
                 <Wrp>
                     <Row>
@@ -85,7 +86,7 @@ export default function UsefulInformations(props) {
                         <img src={bed} /><p> {infos.prix_moyen_hotel}€</p>
                     </Row>
                 </Wrp>
-                <a href={'https://flockeo.com/pays/' + country} target="_blank"><Btn>Trouver un logement responsable</Btn></a>
+                <a href={'https://flockeo.com/pays/' + country} target="_blank"><Btn>{t('usefulInformations.2')}</Btn></a>
             </Container>}
         </Wrapper >
     )

@@ -1,0 +1,227 @@
+{
+  "common": {
+    "1": ["Mon Impact Transport", "My Transport Impact"],
+    "2": ["Itinéraire", "Itinerary"],
+    "3": ["Télétravail", "Telework"]
+  },
+  "theme": {
+    "Clair": ["Clair", "Light"],
+    "Sombre": ["Sombre", "Dark"]
+  },
+  "search": {
+    "1": [
+      "Découvrez la quantité de CO2e que vous émettez",
+      "Find out how much CO2e you emit"
+    ],
+    "2": ["par personne", "per person"],
+    "3": ["pour ce trajet", "for this trip"],
+    "4": [
+      "Découvrez la quantité de CO2e que vous économisez (à l'année) en travaillant de chez vous",
+      "Find out how much CO2e you save (year-round) by working from home"
+    ],
+    "5": ["pour cette distance", "for this distance"],
+    "6": [
+      "Afficher tous les modes de transport",
+      "Show all modes of transport"
+    ],
+    "7": ["Afficher le covoiturage", "Show Carpool"]
+  },
+  "transportation": {
+    "1": ["Découvrir", "Discover"]
+  },
+  "CO2EModal": {
+    "1": [
+      "L'équivalent CO<sub>2</sub> (CO<sub>2</sub>e)",
+      "CO<sub>2</sub> (CO<sub>2</sub>e) equivalent"
+    ],
+    "2": [
+      "Le dérèglement climatique actuel est une conséquence de nos émissions importantes de gaz à effet de serre. Nous avons la chance de pouvoir mesurer ces émissions avec un indice simple : les kilogrammes d'équivalent CO<sub>2</sub> (kgCO<sub>2</sub>e).",
+      "Current climate change is a consequence of our significant greenhouse gas emissions. We are fortunate to be able to measure these emissions with a simple index: kilograms of CO<sub>2</sub> equivalent (kgCO<sub>2</sub>e)."
+    ],
+    "3": [
+      "Par exemple, 1 kg de méthane équivaut à 28 kg de CO<sub>2</sub>. Si la fabrication d'un produit a émis 1 kg de méthane et 1 kg de CO<sub>2</sub>, alors l'impact total de ce produit est de 29 kg d'équivalent CO<sub>2</sub>.",
+      "For example, 1 kg of methane is equivalent to 28 kg of CO<sub>2</sub>. If the manufacture of a product emitted 1 kg of methane and 1 kg of CO<sub>2</sub>, then the total impact of this product is 29 kg of CO<sub>2</sub> equivalent >."
+    ],
+    "4": [
+      "Pour voir plus d'équivalents, vous pouvez utiliser",
+      "To see more equivalents, you can use"
+    ],
+    "5": ["le convertisseur CO2", "the CO2 converter"],
+    "6": ["Voir le Convertisseur CO2", "See the CO2 converter"]
+  },
+  "occupancyModal": {
+    "1": ["Taux de remplissage des véhicules", "Vehicle occupancy rate"],
+    "2": [
+      "L'impact de chaque véhicule est donné \"par personne\", et non pas pour l'ensemble du véhicule.",
+      "The impact of each vehicle is given \"per person\", and not for the whole vehicle."
+    ],
+    "3": [
+      "Les taux de remplissage utilisés dans Mon Impact Transport sont ceux retenus dans la",
+      "The filling rates used in Mon Impact Transport are those used in the"
+    ],
+    "4": ["Base Carbone de l'ADEME", "ADEME Carbon Base"],
+    "5": [
+      ", sauf pour les voitures (thermiques et électriques) pour lesquelles nous ne comptons qu'une seule personne dans le véhicule. Il est possible de moduler le nombre de personnes par voiture avec l'option \"Afficher le covoiturage\".",
+      ", except for cars (thermal and electric) for which we count only one person in the vehicle. It is possible to modulate the number of people per car with the \"Display carpooling\" option."
+    ]
+  },
+  "usefulInformations": {
+    "1": ["Infos utiles", "Useful information"],
+    "2": ["Trouver un logement responsable", "Find a responsible housing"]
+  },
+  "radiativeForcingModal": {
+    "1": ["Impact des traînées", "Impact of contrails"],
+    "2": [
+      "Du fait que les avions volent à haute altitude, la combustion du kérosène crée des traînées et perturbe les cycles d’autres gaz à effet de serre que le CO2 (vapeur d'eau, eau condensée sous diverses formes, NOx et méthane qui, ensemble, produisent de l'ozone, etc.). Cet impact est appelé forçage radiatif additionnel. Dans l'<MagicLink to='https://www.ecologie.gouv.fr/information-ges-des-prestations-transport'>Information GES des prestations de transport réglementaire </MagicLink>, cet impact n'est pas inclus mais il est recommandé dans la réglementation pour la réalisation des Bilans GES des organisations. Vous pouvez visualiser l'impact des traînées tel que proposé dans la Base Carbone(r) en cochant la case ci-dessous.",
+      "Because airplanes fly at high altitudes, burning kerosene creates contrails and disrupts the cycles of greenhouse gases other than CO2 (water vapour, condensed water in various forms, NOx and methane which together, produce ozone, etc.). This impact is called additional radiative forcing. In the <MagicLink to='https://www.ecologie.gouv.fr/information-ges-des-prestations-transport'>GHG information for regulatory transport services </MagicLink>, this impact is not included but it is recommended in the regulations for the production of GHG assessments for organizations. You can view the impact of contrails as proposed in the Base Carbone(r) by checking the box below."
+    ],
+    "3": ["Afficher l'impact des traînées", "Display airplane contrails"]
+  },
+  "uncertainty": {
+    "1": ["Impact des trainées", "Impact of contrails"]
+  },
+  "transportations": {
+    "1": ["Choisissez votre mode de transport", "Choose your transport mode"]
+  },
+  "days": {
+    "1": ["Présentiel", "At work"],
+    "2": ["Télétravail", "Telework"]
+  },
+  "selector": {
+    "1": ["jours par semaine", "days a week"]
+  },
+  "teletravail": {
+    "1": [
+      "Voir et ajuster les détails du calcul",
+      "View and adjust calculation details"
+    ]
+  },
+  "teletravailModal": {
+    "1": ["Mode télétravail", "Teleworking mode"],
+    "2": ["Nous comptons", "We count"],
+    "3": ["jour", "day"],
+    "4": ["jours", "days"],
+    "5": ["travaillé", "worked"],
+    "6": ["travaillés", "worked"],
+    "7": ["par semaine et", "per week and"],
+    "8": ["semaine", "week"],
+    "9": ["semaines", "weeks"],
+    "10": [
+      "de congé par an (+ 7 jours fériés).",
+      "leave per year (+ 7 public holidays)."
+    ],
+    "11": ["Nous considérons que", "We consider that"],
+    "12": ["défaut", "default"],
+    "13": [
+      "des émissions évitées via le télétravail sont émises pour d'autres trajets (courses, école, etc.). Cette valeur par défaut (25%) est tirée de cette <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/3776-caracterisation-des-effets-rebond-induits-par-le-teletravail.html'>étude de l'ADEME</MagicLink>.",
+      "emissions avoided through telework are emitted for other journeys (shopping, school, etc.). This default value (25%) is taken from this <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/3776-caracterisation-des-effets-rebond-induits-par-le-teletravail.html'>ADEME study</MagicLink>."
+    ],
+    "14": [
+      "Les autres effets rebonds non liés aux déplacements (consommation d'électricité du foyer, achat de matériel pour le télétravail, etc.) ne sont pas modélisés ici. Pour donner un ordre de grandeur, <MagicLink to='https://monconvertisseurco2.fr/?co2=248&equivalents=27006_27002_27976_27010_206589'>la fabrication d'un écran d'ordinateur émet autant que 1 285 km de voiture (248 kgCO2e)</MagicLink>.",
+      "The other rebound effects unrelated to travel (electricity consumption at home, purchase of equipment for teleworking, etc.) are not modeled here. To give an order of magnitude, <MagicLink to='https://monconvertisseurco2.fr/?co2=248&equivalents=27006_27002_27976_27010_206589'>the manufacture of a computer screen emits as much as 1,285 km of car (248 kgCO2e)</MagicLink>."
+    ],
+    "15": ["Valider", "Submit"]
+  },
+  "podcasts": {
+    "1": ["À écouter durant vos trajets !", "Listen on your travels!"],
+    "2": ["Voir plus", "See more"]
+  },
+  "yearlyFootprint": {
+    "1": ["émis", "issued"],
+    "2": ["sur", "for"],
+    "3": ["jour", "day"],
+    "4": ["jours", "days"],
+    "5": ["évité", "avoid"],
+    "6": ["évités", "avoided"],
+    "7": [
+      "<strong>à l’année</strong> sur mes déplacements.<br />(d'autres émissions ont peut-être augmenté)",
+      "<strong>year-round</strong> on my travels.<br />(other emissions may have increased)"
+    ]
+  },
+  "percentFootprint": {
+    "1": ["soit", "that is"],
+    "2": [
+      "d'économisé sur mon empreinte carbone annuelle",
+      "saved on my annual carbon footprint"
+    ],
+    "3": [
+      "Préciser ou calculer mon empreinte carbone",
+      "Specify or calculate my carbon footprint"
+    ]
+  },
+  "footprintModal": {
+    "1": ["Mon empreinte carbone", "My carbon footprint"],
+    "2": [
+      "Aujourd'hui, un·e français·e en émet en moyenne 9,9 tonnes de gaz à effet de serre (GES) par an (<MagicLink to='https://www.statistiques.developpement-durable.gouv.fr/estimation-de-lempreinte-carbone-de-1995-2019'>source</MagicLink>).",
+      "Today, a French person emits an average of 9.9 tonnes of greenhouse gases (GHG) per year (<MagicLink to='https://www.statistiques.developpement-durable.gouv.en/carbon-footprint-estimate-from-1995-2019'>source</MagicLink>)."
+    ],
+    "3": [
+      "La cible à atteindre pour <MagicLink to={'https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/'}>respecter l'accord de Paris</MagicLink> est de moins de 2 tonnes de GES par an et par personne d'ici 2050.",
+      "The target to be reached for <MagicLink to={'https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/'}>respecting the Paris agreement</MagicLink> is less than 2 tonnes of GHGs per year per person by 2050."
+    ],
+    "4": ["Si vous connaissez", "If you know"],
+    "5": ["votre empreinte carbone annuelle", "your annual carbon footprint"],
+    "6": ["vous pouvez la modifier :", "you can modify it:"],
+    "7": ["tonnes", "tons"],
+    "8": [
+      "Si vous ne la connaissez pas, vous pouvez la calculer simplement grâce à ce simulateur <MagicLink to={`https://nosgestesclimat.fr/`}>Nos Gestes Climat</MagicLink>",
+      "If you do not know it, you can simply calculate it using the simulator <MagicLink to={`https://nosgestesclimat.fr/`}>Nos Gestes Climat</MagicLink>"
+    ],
+    "9": ["Valider", "Submit"]
+  },
+  "disclaimer": {
+    "1": [
+      "Les distances et modes de transport sont donnés à titre indicatif et ne correspondent pas forcement à la réalité.",
+      "The distances and modes of transport are given for information only and do not necessarily correspond to reality."
+    ],
+    "2": [
+      "<strong>Équivalent CO₂ par personne en France.</strong> Sont incluses les émissions directes, et la production et distribution de carburant et d'électricité. <strong>La construction des véhicules</strong> (voiture, vélo, batterie, train, avion...) <strong>et des infrastructures</strong> (routes, rails, aéroports...) <strong>n'est pas incluse.</strong>",
+      "<strong>CO₂ equivalent per person in France.</strong> This includes direct emissions, and the production and distribution of fuel and electricity. <strong>The construction of vehicles</strong> (car, bicycle, battery, train, plane...) <strong>and of infrastructures</strong> (roads, rails, airports...) <strong>are not included.</strong>"
+    ]
+  },
+  "learning": {
+    "1": ["des", "of"],
+    "2": ["émissions de <Color>CO2</Color>", "<Color>CO2</Color> emissions"],
+    "3": [
+      "\"Hors confinement\", le secteur des transports est le 1er secteur émetteur de gaz à effet de serre.",
+      "\"Excluding quarantine\", the transport sector is the leading sector emitting greenhouse gases."
+    ],
+    "4": [
+      "Jusqu’à peu, se déplacer faisait partie intégrante de notre vie sociale et professionnelle. À tel point que tout notre environnement est structuré autour des transports. Tout invite au voyage, qu’il soit court ou long. Mais comment révolutionner nos trajets ? Découvrez des pistes de réflexion avec cette <MagicLink to='https://multimedia.ademe.fr/infographies/infographie-la-mobilite-ademe/'>infographie de l'ADEME</MagicLink>",
+      "Until recently, getting around was an integral part of our social and professional lives. So much so that our entire environment is structured around transport. Everything invites you to travel, whether short or long. But how can we revolutionize our journeys? Discover food for thought with this <MagicLink to='https://multimedia.ademe.fr/infographies/infographie-la-mobilite-ademe/'>ADEME infographic</MagicLink>"
+    ],
+    "5": [
+      "Si vous souhaitez aller plus loin dans votre démarche, vous pouvez calculer l'ensemble de votre empreinte sur le climat grace à notre <MagicLink to={'https://nosgestesclimat.fr/'}>simulateur Nos Gestes Climat</MagicLink>",
+      "If you want to go further in your approach, you can calculate your entire climate footprint using our <MagicLink to={'https://nosgestesclimat.fr/'}>Our Climate Gestures simulator</MagicLink>"
+    ],
+    "6": ["Découvrir les gestes climat", "Discover climate actions"]
+  },
+  "footer": {
+    "1": ["accessibilité : non conforme", "accessibility: non-compliant"]
+  },
+  "embedButton": {
+    "1": ["Intégrer ce simulateur", "Integrate this simulator"]
+  },
+  "embed": {
+    "1": ["Intégrer", "Integrate"],
+    "2": ["ce simulateur", "this simulator"],
+    "3": ["ce résultat", "this result"],
+    "4": ["Options d'intégration", "Integration options"]
+  },
+  "code": {
+    "1": [
+      "Copiez ce code puis ajoutez-le où vous souhaitez qu'il s'affiche sur votre site web",
+      "Copy this code then add it where you want it to appear on your website"
+    ],
+    "2": ["Copié !", "Copied!"]
+  },
+  "share": {
+    "1": ["Partager", "Share"],
+    "2": ["ce simulateur", "this simulator"],
+    "3": ["ce résultat", "this result"]
+  },
+  "link": {
+    "1": ["Copier", "Copy"],
+    "2": ["Copié !", "Copied!"]
+  }
+}

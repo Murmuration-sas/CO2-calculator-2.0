@@ -46,6 +46,8 @@ const Text = styled.p`
   text-align: center;
 `
 export default function Selector(props) {
+  const { t } = ri18n.useTranslation()
+
   return (
     <Wrapper>
       <Title>{props.label}</Title>
@@ -88,7 +90,7 @@ export default function Selector(props) {
           </svg>
         </Button>
       </Content>
-      <Text>jours par semaine</Text>
+      <Text>{t('selector.1')}</Text>
     </Wrapper>
   )
 }
