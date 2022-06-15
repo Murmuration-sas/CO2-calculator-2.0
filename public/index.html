@@ -1,60 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Primary Meta Tags -->
-    <title>Mon Impact Transport</title>
-    <meta name="title" content="Mon Impact Transport" />
-    <meta
-      name="description"
-      content="Découvrez l'impact de vos déplacements sur le climat ! Des données ouvertes pour une mobilité moins émettrice en CO2."
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#EF0D50" />
-    <meta name="msapplication-TileColor" content="#EF0D50" />
-    <meta name="theme-color" content="#EF0D50" />
+  <!-- Primary Meta Tags -->
+  <title>Mon Impact Transport</title>
+  <meta name="title" content="Mon Impact Transport" />
+  <meta name="description"
+    content="Découvrez l'impact de vos déplacements sur le climat ! Des données ouvertes pour une mobilité moins émettrice en CO2." />
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#EF0D50" />
+  <meta name="msapplication-TileColor" content="#EF0D50" />
+  <meta name="theme-color" content="#EF0D50" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://monimpacttransport.fr/" />
-    <meta property="og:title" content="Mon Impact Transport" />
-    <meta
-      property="og:description"
-      content="Découvrez l'impact de vos déplacements sur le climat ! Des données ouvertes pour une mobilité moins émettrice en CO2."
-    />
-    <meta
-      property="og:image"
-      content="https://monimpacttransport.fr/metaimage.png"
-    />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://monimpacttransport.fr/" />
-    <meta property="twitter:title" content="Mon Impact Transport" />
-    <meta
-      property="twitter:description"
-      content="Découvrez l'impact de vos déplacements sur le climat ! Des données ouvertes pour une mobilité moins émettrice en CO2."
-    />
-    <meta
-      property="twitter:image"
-      content="https://monimpacttransport.fr/metaimage.png"
-    />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://monimpacttransport.fr/" />
+  <meta property="og:title" content="Mon Impact Transport" />
+  <meta property="og:description"
+    content="Découvrez l'impact de vos déplacements sur le climat ! Des données ouvertes pour une mobilité moins émettrice en CO2." />
+  <meta property="og:image" content="https://monimpacttransport.fr/metaimage.png" />
 
-    <!-- Matomo -->
-    <script>
-      var _paq = window._paq || []
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(['trackPageView'])
-      _paq.push(['enableLinkTracking'])
-      ;(function () {
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://monimpacttransport.fr/" />
+  <meta property="twitter:title" content="Mon Impact Transport" />
+  <meta property="twitter:description"
+    content="Découvrez l'impact de vos déplacements sur le climat ! Des données ouvertes pour une mobilité moins émettrice en CO2." />
+  <meta property="twitter:image" content="https://monimpacttransport.fr/metaimage.png" />
+
+  <!-- Matomo -->
+  <script>
+    var _paq = window._paq || []
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView'])
+    _paq.push(['enableLinkTracking'])
+      ; (function () {
         var u = 'https://stats.data.gouv.fr/'
         _paq.push(['setTrackerUrl', u + 'matomo.php'])
         _paq.push(['setSiteId', '155'])
@@ -67,32 +56,46 @@
         g.src = u + 'matomo.js'
         s.parentNode.insertBefore(g, s)
       })()
-    </script>
-    <!-- End Matomo Code -->
-  </head>
+  </script>
+  <!-- End Matomo Code -->
 
-  <body>
-    <noscript
-      >Découvrez l'impact de vos déplacements sur le climat ! Des données
-      ouvertes pour une mobilité moins émettrice en CO2.</noscript
-    >
-    <div id="root"></div>
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="nom" />
-      <input type="email" name="email" />
-      <input type="text" name="objet" />
-      <textarea name="message"></textarea>
-    </form>
-    <form name="bug" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="nom" />
-      <input type="email" name="email" />
-      <input type="text" name="objet" />
-      <textarea name="message"></textarea>
-    </form>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.js"
-      integrity="sha512-5+HBQlT1izP2UxL213/uqaO9tIpPso52TedvIsOevDs6w/HNt0/KNlkYLgi8Ona7lPCBjMEWybiR/qqs2MgyEg=="
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <!-- GA Google Analytics @ https://m0n.co/ga -->
+  <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-150901975-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <noscript>Découvrez l'impact de vos déplacements sur le climat ! Des données
+    ouvertes pour une mobilité moins émettrice en CO2.</noscript>
+  <div id="root"></div>
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nom" />
+    <input type="email" name="email" />
+    <input type="text" name="objet" />
+    <textarea name="message"></textarea>
+  </form>
+  <form name="bug" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="nom" />
+    <input type="email" name="email" />
+    <input type="text" name="objet" />
+    <textarea name="message"></textarea>
+  </form>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.js"
+    integrity="sha512-5+HBQlT1izP2UxL213/uqaO9tIpPso52TedvIsOevDs6w/HNt0/KNlkYLgi8Ona7lPCBjMEWybiR/qqs2MgyEg=="
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
