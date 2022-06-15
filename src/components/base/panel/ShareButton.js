@@ -53,13 +53,14 @@ const Share = styled.svg`
 `
 export default function ShareButton(props) {
   const { installPrompt } = useContext(UXContext)
+  const { t } = ri18n.useTranslation()
 
   return (
     <StyledWrapper
       open={props.open}
       onClick={props.onClick}
       four={installPrompt}
-      tooltip={'Partager ce simulateur'}
+      tooltip={t('shareButton.1')}
     >
       <Share
         open={props.open}

@@ -2,12 +2,19 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import translations from './translations.json'
 
+function parse(toParse, lang) {
+    return _.mapValues(toParse, (e) => {
+        if (Object.prototype.toString.call(e) === "[object Object]") return parse(e, lang)
+        else return e[lang == 'fr' ? 0 : 1]
+    })
+}
+
 const resources = {
     fr: {
-        translation: _.mapValues(translations, (o) => { return _.mapValues(o, (arr) => { return arr[0] }) })
+        translation: parse(translations, 'fr')
     },
     en: {
-        translation: _.mapValues(translations, (o) => { return _.mapValues(o, (arr) => { return arr[1] }) })
+        translation: parse(translations, 'en')
     }
 }
 

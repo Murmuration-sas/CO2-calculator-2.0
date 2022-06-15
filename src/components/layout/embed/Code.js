@@ -33,7 +33,7 @@ const Explication = styled.p`
 `
 export default function Code(props) {
   const [copied, setCopied] = useState(false)
-  const script = '<iframe src="' + window.location.protocol + "//" + window.location.hostname + window.location.pathname + (props.url ? props.url : '') + '" style="border: medium none; width: 100%; display: block; margin: 0px auto; overflow: hidden; height: 982px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" />'
+  const script = '<iframe src="' + window.location.protocol + "//" + window.location.hostname + window.location.pathname + '#' + (props.url ? props.url : '') + '" style="border: medium none; width: 100%; display: block; margin: 0px auto; overflow: hidden; height: 982px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no" />'
   const { t } = ri18n.useTranslation()
 
   return (

@@ -14,16 +14,17 @@ const Wrapper = styled.div`
 
 export default function Itinerary() {
   const { start, setStartPlace, end, setEndPlace } = useContext(SearchContext)
+  const { t } = ri18n.useTranslation()
 
   return (
     <Wrapper>
       <Address
-        placeholder='Départ'
+        placeholder={t('itinerary.1')}
         address={start?.address}
         setPlace={setStartPlace}
       />
       <Address
-        placeholder='Arrivée'
+        placeholder={t('itinerary.2')}
         address={end?.address}
         setPlace={setEndPlace}
       />

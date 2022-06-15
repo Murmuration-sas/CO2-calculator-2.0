@@ -96,6 +96,10 @@
       "View and adjust calculation details"
     ]
   },
+  "itinerary": {
+    "1": ["Départ", "Departure"],
+    "2": ["Arrivée", "Arrival"]
+  },
   "teletravailModal": {
     "1": ["Mode télétravail", "Teleworking mode"],
     "2": ["Nous comptons", "We count"],
@@ -215,6 +219,40 @@
     ],
     "2": ["Copié !", "Copied!"]
   },
+  "shareWrapper": {
+    "default": {
+      "simulator": [
+        "Découvrez l'impact de vos déplacements sur l'environnement ! Grâce à ce simulateur comparez les différents modes de transport pour choisir une mobilité moins émettrice en CO2 🌍",
+        "Discover the impact of your travels on the environment! Thanks to this simulator, compare the different modes of transport to choose a mobility that emits less CO2 🌍"
+      ],
+      "result": [
+        "Découvrez l'impact de mon déplacement sur l'environnement ! Grâce à ce simulateur j’ai comparé les différents modes de transport pour mon trajet. Et pour votre trajet, quel est le mode le moins émetteur de CO2 ? 🌍",
+        "Discover the impact of my trip on the environment! Thanks to this simulator, I compared the different modes of transport for my journey. And for your trip, which mode is the least CO2 emitting? 🌍"
+      ]
+    },
+    "mail": {
+      "simulator": {
+        "subject": [
+          "Découvrez et intégrez le simulateur de l'ADEME Mon Impact Transport 🧭",
+          "Discover and integrate ADEME Mon Impact Transport simulator 🧭"
+        ],
+        "body": [
+          "Bonjour,\n\nVous souhaitez sensibiliser votre communauté ou collaborateurs et les aider à se tourner vers une mobilité moins émettrice en CO2 ?\n\nRetrouvez l’impact de vos déplacements grâce au simulateur Mon Impact Transport !\n\nDécouvrez le ici : ",
+          "Hello,\n\nDo you want to raise awareness in your community or employees and help them turn to mobility that emits less CO2?\n\nFind the impact of your travels with the My Impact Transport simulator!\n\nCheck it out here: "
+        ]
+      },
+      "result": {
+        "subject": [
+          "Découvre mon résultat sur le simulateur de l'ADEME Mon Impact Transport 🧭",
+          "Discover my result on ADEME Mon Impact Transport simulator 🧭"
+        ],
+        "body": [
+          "Bonjour,\n\nVoici un résultat de recherche que je voulais partager avec toi : ",
+          "Hello,\n\nHere is a search result I wanted to share with you: "
+        ]
+      }
+    }
+  },
   "share": {
     "1": ["Partager", "Share"],
     "2": ["ce simulateur", "this simulator"],
@@ -223,5 +261,8 @@
   "link": {
     "1": ["Copier", "Copy"],
     "2": ["Copié !", "Copied!"]
+  },
+  "shareButton": {
+    "1": ["Partager ce simulateur", "Share this simulator"]
   }
 }

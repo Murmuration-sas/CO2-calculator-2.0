@@ -51,7 +51,7 @@ export default function Share(props) {
     setTypeShare,
     setEmbedOpen,
   } = useContext(UXContext)
-  const absoluteUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname + (url ? url : '')
+  const absoluteUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname + "#" + (url ? url : '')
   const { t } = ri18n.useTranslation()
 
   return (
