@@ -91,7 +91,9 @@
     "1": ["jours par semaine", "days a week"]
   },
   "teletravail": {
-    "1": [
+    "1": ["Domicile", "Home"],
+    "2": ["Travail", "Workplace"],
+    "3": [
       "Voir et ajuster les détails du calcul",
       "View and adjust calculation details"
     ]

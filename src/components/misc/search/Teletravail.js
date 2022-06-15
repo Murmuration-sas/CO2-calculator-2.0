@@ -28,12 +28,12 @@ export default function Teletravail() {
   return (
     <Wrapper>
       <Address
-        placeholder='Domicile'
+        placeholder={t('teletravail.1')}
         address={start?.address}
         setPlace={setStartPlace}
       />
       <Address
-        placeholder='Travail'
+        placeholder={t('teletravail.2')}
         address={end?.address}
         setPlace={setEndPlace}
       />
@@ -41,7 +41,7 @@ export default function Teletravail() {
       <Days />
       {start && end && teletravailTransportation && (
         <Details onClick={() => setTeletravail(true)}>
-          {t('teletravail.1')}
+          {t('teletravail.3')}
         </Details>
       )}
     </Wrapper>
