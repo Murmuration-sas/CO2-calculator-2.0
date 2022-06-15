@@ -12,7 +12,9 @@ https://api.monimpacttransport.fr/beta/getEmissionsPerDistance
 
 `yarn` pour installer l'application
 
-`yarn start` pour lancer l'application sur [http://localhost:3000](http://localhost:3000)
+`yarn run dev` pour lancer l'application sur [http://localhost:8080](http://localhost:8080)
+
+`yarn run prod` pour la mise en production
 
 ### Déploiement
 
