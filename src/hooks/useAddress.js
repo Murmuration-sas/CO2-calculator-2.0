@@ -8,7 +8,7 @@ export function useSuggestions(search) {
       search && search.length > 2
         ? axios
             .get(
-              `https://monimpacttransport.fr/.netlify/functions/callGMapSearch?input=${search}&language=fr`
+              `${env.API_URL}/callGMapSearch?input=${search}&language=fr`
             )
             .then((res) => res.data.predictions)
         : Promise.resolve([]),
@@ -24,7 +24,7 @@ export function useAddress(id) {
     () =>
       axios
         .get(
-          `https://monimpacttransport.fr/.netlify/functions/callGMapPlace?place_id=${id}`
+          `${env.API_URL}/callGMapPlace?place_id=${id}`
         )
         .then((res) => res.data),
     {

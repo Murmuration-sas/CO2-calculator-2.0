@@ -7,7 +7,7 @@ export function useItinerary(start, end, mode) {
     () =>
       axios
         .get(
-          `https://monimpacttransport.fr/.netlify/functions/callGMap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
+          `${env.API_URL}/callGMap/?destinations=${start.latitude}%2C${start.longitude}&origins=${end.latitude}%2C${end.longitude}&mode=${mode}`
         )
         .then((res) => res.data.rows),
     {
